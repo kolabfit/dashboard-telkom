@@ -60,6 +60,24 @@
                 </div> <!--end::Container-->
             </div> <!--end::App Content Header--> <!--begin::App Content-->
             <div class="app-content"> <!--begin::Container-->
+              <div class="container-fluid"> <!--begin::Row-->
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="card mb-4">
+                      <div class="card-header">
+                        <h3 class="card-title">Upload an Excel File</h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="container mx-auto">
+                            <input type="file" id="fileInput" accept=".xlsx" class="mb-6 p-2 border rounded" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!--end::Row-->
+              </div> <!--end::Container-->
+            </div> <!--end::App Content-->
+            <div class="app-content"> <!--begin::Container-->
                 <div class="container-fluid"> <!--begin::Row-->
                     <div class="row mb-3"> <!--begin::Row-->
                         <div class="col-lg-6 col-6"> <!--begin::Col-->
@@ -555,6 +573,7 @@
         );
         sales_charts.render();
     </script>
+    <script src="../js/datahandler.js"></script>
 </body><!--end::Body-->
 
 </html>
