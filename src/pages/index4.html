@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard Telkom | Index Measurement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Dashboard Telkom | Index Measurement">
+    <meta name="author" content="ColorlibHQ">
+    <meta name="description" content="Telkom Dashboard for Index Measurement including Digital Culture and AKHLAK Values.">
+    <meta name="keywords" content="dashboard, Telkom, index measurement, digital culture, AKHLAK, Bootstrap, charts">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/adminlte.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
+<style>
+    .bg-orange {
+        background-color: #ff7b00;
+        color: white;
+    }
+    .doughnut-chart {
+        max-width: 250px;
+        height: 250px;
+    }
+    .chart-card {
+        height: 100%;
+    }
+    .chart-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .akhlak-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+    }
+    .custom-card {
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item d-none d-md-block">
+                        <a href="#" class="nav-link" style="font-weight: bold;">Dashboard Telkom</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <div>
+                                <label for="kategori-dropdown" class="form-label">Kategori</label>
+                                <select class="form-select" id="kategori-dropdown">
+                                    <option value="Telkom Parent">Telkom Parent</option>
+                                    <option value="Telkom Group (Parent+AP)">Telkom Group (Parent+AP)</option>
+                                    <option value="Telkom Group (AP tanpa Telkomsel)">Telkom Group (AP tanpa Telkomsel)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="pengukuran-dropdown" class="form-label">Pengukuran Index</label>
+                                <select class="form-select" id="pengukuran-dropdown">
+                                    <option value="AKHLAK PER Core Value">AKHLAK PER Core Value</option>
+                                    <option value="Digital Culture Index">Digital Culture Index</option>
+                                    <option value="Net Promoter Score">Net Promoter Score</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 connectedSortable">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="card-title">Dashboard Charts</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-grid">
+                                        <div class="card chart-card">
+                                            <div class="card-body">
+                                                <h5 class="text-center">Jumlah Responden Berdasarkan Generasi</h5>
+                                                <canvas id="generasi-chart" style="max-width: 300px; height: 200px;"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="card chart-card">
+                                            <div class="card-body">
+                                                <h5 class="text-center">Persentase Responden Berdasarkan Gender</h5>
+                                                <canvas id="gender-chart" style="max-width: 250px; height: 150px;"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="card chart-card">
+                                            <div class="card-body">
+                                                <h5 class="text-center">Persentase Responden Berdasarkan Band Position</h5>
+                                                <canvas id="band-position-chart" style="max-width: 300px; height: 200px;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-4">
+                                        <div class="card-header">
+                                            <h5 class="card-title text-center">Detail Indeks Survey DCI 2024</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="detail-grid">
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
+                                                            <canvas id="akhlak-chart" class="doughnut-chart"></canvas>
+                                                        </div>
+                                                        <h5 class="mt-3">87,41% SEHAT</h5>
+                                                        <table class="table mt-3">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Kategori</th>
+                                                                    <th>Range Index</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span class="badge bg-success">Sehat</span></td>
+                                                                    <td>75% - 100%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-warning">Cukup Sehat</span></td>
+                                                                    <td>50% - 74,9%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge" style="background-color: #FFA500; color: white;">Tidak Sehat</span></td>
+                                                                    <td>25% - 49,5%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
+                                                                    <td>0% - 24,9%</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <h6>Digital Culture Index</h6>
+                                                        <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
+                                                            <canvas id="digital-culture-chart" class="doughnut-chart"></canvas>
+                                                        </div>
+                                                        <table class="table mt-3">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Kategori</th>
+                                                                    <th>Range Index</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span class="badge bg-success">Differentiators</span></td>
+                                                                    <td>75% - 100%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-warning">Collaborators</span></td>
+                                                                    <td>50% - 74,9%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-orange">Adopters</span></td>
+                                                                    <td>25% - 49,5%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-danger">Skeptics</span></td>
+                                                                    <td>0% - 24,9%</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <h6>Net Promoter Score</h6>
+                                                        <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
+                                                            <canvas id="nps-chart" class="doughnut-chart"></canvas>
+                                                        </div>
+                                                        <table class="table mt-3">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Kategori</th>
+                                                                    <th>Range Index</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span class="badge bg-success">Mature</span></td>
+                                                                    <td>81 - 100</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-warning">Developed</span></td>
+                                                                    <td>60 - 80</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-orange">Starter</span></td>
+                                                                    <td>0 - 59</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <h6>Penerimaan</h6>
+                                                        <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
+                                                            <canvas id="acceptance-chart" class="doughnut-chart"></canvas>
+                                                        </div>
+                                                        <table class="table mt-3">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Kategori</th>
+                                                                    <th>Range Skor</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td><span class="badge bg-success">Penerimaan Tinggi</span></td>
+                                                                    <td>251 - 300</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-warning">Penerimaan Menengah</span></td>
+                                                                    <td>181 - 250</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><span class="badge bg-danger">Penerimaan Rendah</span></td>
+                                                                    <td>&le;100 - 180</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-4 mb-4">
+                                                    <div class="card">
+                                                        <div class="card-body text-center">
+                                                            <h6>Readiness to Change</h6>
+                                                            <div class="d-flex justify-content-center align-items-center" style="height: 250px;">
+                                                                <canvas id="readiness-chart" class="doughnut-chart"></canvas>
+                                                            </div>
+                                                            <table class="table mt-3">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Kategori</th>
+                                                                        <th>Range Index</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><span class="badge bg-success">Sangat Siap</span></td>
+                                                                        <td>80% - 100%</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><span class="badge bg-warning">Siap</span></td>
+                                                                        <td>60% - 80%</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><span class="badge bg-orange">Kurang Siap</span></td>
+                                                                        <td>30% - 60%</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><span class="badge bg-danger">Tidak Siap</span></td>
+                                                                        <td>0% - 30%</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 mb-4">
+                                                    <div class="card">
+                                                        <div class="card-body text-center">
+                                                            <h6>Intervensi Pimpinan, Sistem, & Simbol</h6>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <canvas id="intervention-leader-chart" class="doughnut-chart"></canvas>
+                                                                    <h6>Intervensi Pimpinan</h6>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <canvas id="intervention-system-chart" class="doughnut-chart"></canvas>
+                                                                    <h6>Intervensi Sistem</h6>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <canvas id="intervention-symbol-chart" class="doughnut-chart"></canvas>
+                                                                    <h6>Intervensi Simbol</h6>
+                                                                </div>
+                                                            </div>
+                                                            <table class="table mt-3">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Kategori</th>
+                                                                        <th>Range Index</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><span class="badge bg-success">Melebihi standar</span></td>
+                                                                        <td>2 &lt; X &le; 3</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><span class="badge bg-warning">Memenuhi standar</span></td>
+                                                                        <td>1 &lt; X &le; 2</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><span class="badge bg-danger">Kurang memenuhi standar</span></td>
+                                                                        <td>X &le; 1</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- New Custom Card -->
+                            <div class="card custom-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Pengukuran Index</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-grid">
+                                        <div class="card-body">
+                                            <div class="card">
+                                                <div class="card-body text-center">
+                                                    <h5 class="text-center">Pengukuran AKHLAK Index per Core Value</h5>
+                                                    <div class="akhlak-grid">
+                                                        <div>
+                                                            <canvas id="akhlak-amanah-chart" class="doughnut-chart" style="max-width: 200px; height: 200px;"></canvas>
+                                                            <h5 class="mt-3">AMANAH</h5>
+                                                            <h5>86,40% SEHAT</h5>
+                                                        </div>
+                                                        <div>
+                                                            <canvas id="akhlak-kompeten-chart" class="doughnut-chart" style="max-width: 200px; height: 200px;"></canvas>
+                                                            <h5 class="mt-3">KOMPETEN</h5>
+                                                            <h5>86,51% SEHAT</h5>
+                                                        </div>
+                                                        <div>
+                                                            <canvas id="akhlak-harmonis-chart" class="doughnut-chart" style="max-width: 200px; height: 200px;"></canvas>
+                                                            <h5 class="mt-3">HARMONIS</h5>
+                                                            <h5>87,50% SEHAT</h5>
+                                                        </div>
+                                                        <div>
+                                                            <canvas id="akhlak-loyal-chart" class="doughnut-chart" style="max-width: 200px; height: 200px;"></canvas>
+                                                            <h5 class="mt-3">LOYAL</h5>
+                                                            <h5>87,52% SEHAT</h5>
+                                                        </div>
+                                                        <div>
+                                                            <canvas id="akhlak-adaptif-chart" class="doughnut-chart" style="max-width: 200px; height: 200px;"></canvas>
+                                                            <h5 class="mt-3">ADAPTIF</h5>
+                                                            <h5 style="color: red;">85,83% SEHAT</h5>
+                                                        </div>
+                                                        <div>
+                                                            <canvas id="akhlak-kolaboratif-chart" class="doughnut-chart" style="max-width: 200px; height: 200px;"></canvas>
+                                                            <h5 class="mt-3">KOLABORATIF</h5>
+                                                            <h5>86,23% SEHAT</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        <div class="card chart-card">
+                                            <div class="card-body">
+                                                <h5 class="text-center">Indeks Digital Culture Telkom Parent 2024</h5>
+                                                <canvas id="digital-culture-telkom-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of New Custom Card -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="float-end d-none d-sm-inline">Anything you want</div>
+            <strong>Copyright &copy; 2014-2024 <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.</strong>
+            All rights reserved.
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    // Initialize variables to store chart instances
+    let generasiChart, genderChart, bandPositionChart, akhlakImplementationChart, digitalCultureTelkomChart;
+    
+    // Setup kategori dropdown listener
+    const kategoriDropdown = document.getElementById('kategori-dropdown');
+    kategoriDropdown.addEventListener('change', updateDashboardContent);
+    
+    // Generasi Chart
+    const ctxGenerasi = document.getElementById('generasi-chart').getContext('2d');
+    generasiChart = new Chart(ctxGenerasi, {
+        type: 'bar',
+        data: {
+            labels: ['Baby Boomer', 'Gen X', 'Junior Millennial', 'Senior Millennial', 'Gen Z'],
+            datasets: [{
+                label: 'Jumlah Responden',
+                data: [3, 5, 10, 12, 8],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: { 
+                x: { beginAtZero: true }, 
+                y: { beginAtZero: true } 
+            }
+        }
+    });
+    
+    // Gender Chart
+    const ctxGender = document.getElementById('gender-chart').getContext('2d');
+    genderChart = new Chart(ctxGender, {
+        type: 'pie',
+        data: {
+            labels: ['Pria', 'Perempuan'],
+            datasets: [{
+                label: 'Persentase Responden',
+                data: [66.67, 33.33],
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
+                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+    
+    // Band Position Chart
+    const ctxBandPosition = document.getElementById('band-position-chart').getContext('2d');
+    bandPositionChart = new Chart(ctxBandPosition, {
+        type: 'bar',
+        data: {
+            labels: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+            datasets: [{
+                label: 'Jumlah Responden',
+                data: [8, 1, 5, 5, 3, 5, 0],
+                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                borderColor: 'rgba(153, 102, 255, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: { 
+                x: { beginAtZero: true }, 
+                y: { beginAtZero: true } 
+            }
+        }
+    });
+
+    // AKHLAK Chart
+    const ctxAkhlak = document.getElementById('akhlak-chart').getContext('2d');
+    new Chart(ctxAkhlak, {
+        type: 'doughnut',
+        data: {
+            labels: ['Implementasi AKHLAK'],
+            datasets: [{
+                label: 'Implementasi AKHLAK',
+                data: [87.41, 12.59],
+                backgroundColor: ['rgba(255, 206, 86, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(255, 206, 86, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Digital Culture Chart
+    const ctxDigitalCulture = document.getElementById('digital-culture-chart').getContext('2d');
+    new Chart(ctxDigitalCulture, {
+        type: 'doughnut',
+        data: {
+            labels: ['Digital Culture Index'],
+            datasets: [{
+                label: 'Digital Culture Index',
+                data: [86.64, 13.36],
+                backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(54, 162, 235, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // NPS Chart
+    const ctxNPS = document.getElementById('nps-chart').getContext('2d');
+    new Chart(ctxNPS, {
+        type: 'doughnut',
+        data: {
+            labels: ['Net Promoter Score'],
+            datasets: [{
+                label: 'Net Promoter Score',
+                data: [95.28, 4.72],
+                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Acceptance Chart
+    const ctxAcceptance = document.getElementById('acceptance-chart').getContext('2d');
+    new Chart(ctxAcceptance, {
+        type: 'doughnut',
+        data: {
+            labels: ['Penerimaan'],
+            datasets: [{
+                label: 'Penerimaan',
+                data: [261.9, 38.1],
+                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Readiness Chart
+    const ctxReadiness = document.getElementById('readiness-chart').getContext('2d');
+    new Chart(ctxReadiness, {
+        type: 'doughnut',
+        data: {
+            labels: ['Readiness to Change'],
+            datasets: [{
+                label: 'Readiness to Change',
+                data: [87.06, 12.94],
+                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Intervention Charts
+    const ctxInterventionLeader = document.getElementById('intervention-leader-chart').getContext('2d');
+    new Chart(ctxInterventionLeader, {
+        type: 'doughnut',
+        data: {
+            labels: ['Intervensi Pimpinan'],
+            datasets: [{
+                label: 'Intervensi Pimpinan',
+                data: [2.94, 1.06],
+                backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(54, 162, 235, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    const ctxInterventionSystem = document.getElementById('intervention-system-chart').getContext('2d');
+    new Chart(ctxInterventionSystem, {
+        type: 'doughnut',
+        data: {
+            labels: ['Intervensi Sistem'],
+            datasets: [{
+                label: 'Intervensi Sistem',
+                data: [1.5, 1.5],
+                backgroundColor: ['rgba(255, 206, 86, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(255, 206, 86, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    const ctxInterventionSymbol = document.getElementById('intervention-symbol-chart').getContext('2d');
+    new Chart(ctxInterventionSymbol, {
+        type: 'doughnut',
+        data: {
+            labels: ['Intervensi Simbol'],
+            datasets: [{
+                label: 'Intervensi Simbol',
+                data: [1.97, 1.03],
+                backgroundColor: ['rgba(153, 102, 255, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                borderColor: ['rgba(153, 102, 255, 1)', 'rgba(201, 203, 207, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // AKHLAK Charts
+    const akhlakCoreValues = [
+        { id: 'akhlak-amanah-chart', label: 'AMANAH', value: 86.4 },
+        { id: 'akhlak-kompeten-chart', label: 'KOMPETEN', value: 86.51 },
+        { id: 'akhlak-harmonis-chart', label: 'HARMONIS', value: 87.5 },
+        { id: 'akhlak-loyal-chart', label: 'LOYAL', value: 87.52 },
+        { id: 'akhlak-adaptif-chart', label: 'ADAPTIF', value: 85.83 },
+        { id: 'akhlak-kolaboratif-chart', label: 'KOLABORATIF', value: 86.23 }
+    ];
+
+    akhlakCoreValues.forEach(coreValue => {
+        const ctx = document.getElementById(coreValue.id).getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [coreValue.label],
+                datasets: [{
+                    label: coreValue.label,
+                    data: [coreValue.value, 100 - coreValue.value],
+                    backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(201, 203, 207, 0.2)'],
+                    borderColor: ['rgba(75, 192, 192, 1)', 'rgba(201, 203, 207, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    });
+
+    // Digital Culture Telkom Chart
+    const ctxDigitalCultureTelkom = document.getElementById('digital-culture-telkom-chart').getContext('2d');
+    digitalCultureTelkomChart = new Chart(ctxDigitalCultureTelkom, {
+        type: 'bar',
+        data: {
+            labels: ['Customer Centricity', 'Data Driven', 'Openness', 'Agile Innovation', 'Dare to experiment', 'Learning culture', 'Decentralized', 'Continuous improvement', 'Collaboration', 'Digital Mindset'],
+            datasets: [
+                {
+                    label: '2023',
+                    data: [82.28, 83.06, 83.67, 83.33, 83.50, 83.89, 83.33, 84.11, 83.50, 83.97],
+                    backgroundColor: 'rgba(201, 203, 207, 0.2)',
+                    borderColor: 'rgba(201, 203, 207, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: '2024',
+                    data: [84.90, 85.69, 85.34, 85.75, 84.04, 84.95, 85.36, 85.00, 85.42, 85.04],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
+
+// Function to update dashboard content based on selected category
+function updateDashboardContent() {
+    let selectedCategory = document.getElementById('kategori-dropdown').value;
+    
+    if (selectedCategory === "Telkom Parent") {
+        generasiChart.data.datasets[0].data = [3, 5, 10, 12, 8];
+        genderChart.data.datasets[0].data = [66.67, 33.33];
+        bandPositionChart.data.datasets[0].data = [8, 1, 5, 5, 3, 5, 0];
+        akhlakImplementationChart.data.datasets[1].data = [84.90, 85.69, 85.34, 85.75, 84.04, 84.95, 85.36, 85.00, 85.42, 85.04];
+        digitalCultureTelkomChart.data.datasets[1].data = [84.90, 85.69, 85.34, 85.75, 84.04, 84.95, 85.36, 85.00, 85.42, 85.04];
+    } else if (selectedCategory === "Telkom Group (Parent+AP)") {
+        generasiChart.data.datasets[0].data = [4, 6, 15, 18, 10];
+        genderChart.data.datasets[0].data = [60, 40];
+        bandPositionChart.data.datasets[0].data = [10, 2, 6, 6, 4, 6, 1];
+        akhlakImplementationChart.data.datasets[1].data = [82.28, 83.06, 83.67, 83.33, 83.50, 83.89, 83.33, 84.11, 83.50, 83.97];
+        digitalCultureTelkomChart.data.datasets[1].data = [82.28, 83.06, 83.67, 83.33, 83.50, 83.89, 83.33, 84.11, 83.50, 83.97];
+    } else if (selectedCategory === "Telkom Group (AP tanpa Telkomsel)") {
+        generasiChart.data.datasets[0].data = [2, 4, 8, 10, 5];
+        genderChart.data.datasets[0].data = [55, 45];
+        bandPositionChart.data.datasets[0].data = [5, 1, 3, 4, 2, 3, 0];
+        akhlakImplementationChart.data.datasets[1].data = [83.0, 84.0, 85.0, 86.0, 87.0, 88.0, 89.0, 90.0, 91.0, 92.0];
+                digitalCultureTelkomChart.data.datasets[1].data = [83.0, 84.0, 85.0, 86.0, 87.0, 88.0, 89.0, 90.0, 91.0, 92.0];
+            }
+            generasiChart.update();
+            genderChart.update();
+            bandPositionChart.update();
+            akhlakImplementationChart.update();
+            digitalCultureTelkomChart.update();
+        }
+    </script>
+</body>
+</html>
