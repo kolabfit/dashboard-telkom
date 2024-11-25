@@ -56,7 +56,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
                                 <li class="breadcrumb-item">
-                                    <a href="#">Home</a>
+                                    <a href="index.html">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Dashboard
@@ -176,7 +176,7 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <div>
                                         <canvas id="akhlak-amanah-chart" class="doughnut-chart"
-                                            style="max-width: 150px; height: 150px;"></canvas>
+                                            style="max-width: 100%;"></canvas>
                                         <h5 class="mt-3">AMANAH</h5>
                                         <h5>86,40% SEHAT</h5>
                                     </div>
@@ -185,7 +185,7 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <div>
                                         <canvas id="akhlak-kompeten-chart" class="doughnut-chart"
-                                            style="max-width: 150px; height: 150px;"></canvas>
+                                            style="max-width: 100%;"></canvas>
                                         <h5 class="mt-3">KOMPETEN</h5>
                                         <h5>86,51% SEHAT</h5>
                                     </div>
@@ -194,7 +194,7 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <div>
                                         <canvas id="akhlak-harmonis-chart" class="doughnut-chart"
-                                            style="max-width: 150px; height: 150px;"></canvas>
+                                            style="max-width: 100%;"></canvas>
                                         <h5 class="mt-3">HARMONIS</h5>
                                         <h5>87,50% SEHAT</h5>
                                     </div>
@@ -203,7 +203,7 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <div>
                                         <canvas id="akhlak-loyal-chart" class="doughnut-chart"
-                                            style="max-width: 150px; height: 150px;"></canvas>
+                                            style="max-width: 100%;"></canvas>
                                         <h5 class="mt-3">LOYAL</h5>
                                         <h5>87,52% SEHAT</h5>
                                     </div>
@@ -212,7 +212,7 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <div>
                                         <canvas id="akhlak-adaptif-chart" class="doughnut-chart"
-                                            style="max-width: 150px; height: 150px;"></canvas>
+                                            style="max-width: 100%;"></canvas>
                                         <h5 class="mt-3">ADAPTIF</h5>
                                         <h5>85,83% SEHAT</h5>
                                     </div>
@@ -221,9 +221,175 @@
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <div>
                                         <canvas id="akhlak-kolaboratif-chart" class="doughnut-chart"
-                                            style="max-width: 150px; height: 150px;"></canvas>
+                                            style="max-width: 100%;"></canvas>
                                         <h5 class="mt-3">KOLABORATIF</h5>
                                         <h5>86,23% SEHAT</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal for Amanah -->
+                            <div class="modal fade" id="modal-amanah" tabindex="-1" aria-labelledby="modal-amanah-label"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-amanah-label">Detail Data AMANAH</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kategori</th>
+                                                        <th>Persentase</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table-body-amanah">
+                                                    <!-- Data diisi melalui JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Repeat for each modal (kompeten, harmonis, loyal, adaptif, kolaboratif) -->
+
+
+                            <!-- Modal for Kompeten -->
+                            <div class="modal fade" id="modal-kompeten" tabindex="-1"
+                                aria-labelledby="modal-kompeten-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-kompeten-label">Detail Data KOMPETEN</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kategori</th>
+                                                        <th>Persentase</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table-body-kompeten">
+                                                    <!-- Data diisi melalui JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal for Harmonis -->
+                            <div class="modal fade" id="modal-harmonis" tabindex="-1"
+                                aria-labelledby="modal-harmonis-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-harmonis-label">Detail Data HARMONIS</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kategori</th>
+                                                        <th>Persentase</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table-body-harmonis">
+                                                    <!-- Data diisi melalui JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal for Loyal -->
+                            <div class="modal fade" id="modal-loyal" tabindex="-1" aria-labelledby="modal-loyal-label"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-loyal-label">Detail Data LOYAL</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kategori</th>
+                                                        <th>Persentase</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table-body-loyal">
+                                                    <!-- Data diisi melalui JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal for Adaptif -->
+                            <div class="modal fade" id="modal-adaptif" tabindex="-1"
+                                aria-labelledby="modal-adaptif-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-adaptif-label">Detail Data ADAPTIF</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kategori</th>
+                                                        <th>Persentase</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table-body-adaptif">
+                                                    <!-- Data diisi melalui JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal for Kolaboratif -->
+                            <div class="modal fade" id="modal-kolaboratif" tabindex="-1"
+                                aria-labelledby="modal-kolaboratif-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-kolaboratif-label">Detail Data KOLABORATIF
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kategori</th>
+                                                        <th>Persentase</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table-body-kolaboratif">
+                                                    <!-- Data diisi melalui JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1119,90 +1285,72 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             // Data untuk Pie Chart
-            const dataAmanah = {
-                labels: ['Sehat', 'Tidak Sehat'],
-                datasets: [{
-                    data: [86.40, 13.60], // Persentase Sehat dan Tidak Sehat
-                    backgroundColor: ['#28a745', '#dc3545'],
-                    borderWidth: 1
-                }]
+            const pieChartData = {
+                amanah: {
+                    labels: ['Sehat', 'Tidak Sehat'],
+                    data: [86.40, 13.60]
+                },
+                kompeten: {
+                    labels: ['Sehat', 'Tidak Sehat'],
+                    data: [86.51, 13.49]
+                },
+                harmonis: {
+                    labels: ['Sehat', 'Tidak Sehat'],
+                    data: [87.50, 12.50]
+                },
+                loyal: {
+                    labels: ['Sehat', 'Tidak Sehat'],
+                    data: [87.52, 12.48]
+                },
+                adaptif: {
+                    labels: ['Sehat', 'Tidak Sehat'],
+                    data: [85.83, 14.17]
+                },
+                kolaboratif: {
+                    labels: ['Sehat', 'Tidak Sehat'],
+                    data: [86.23, 13.77]
+                }
             };
 
-            const dataKompeten = {
-                labels: ['Sehat', 'Tidak Sehat'],
-                datasets: [{
-                    data: [86.51, 13.49], // Persentase Sehat dan Tidak Sehat
-                    backgroundColor: ['#28a745', '#dc3545'],
-                    borderWidth: 1
-                }]
-            };
-
-            const dataHarmonis = {
-                labels: ['Sehat', 'Tidak Sehat'],
-                datasets: [{
-                    data: [87.50, 12.50], // Persentase Sehat dan Tidak Sehat
-                    backgroundColor: ['#28a745', '#dc3545'],
-                    borderWidth: 1
-                }]
-            };
-
-            const dataLoyal = {
-                labels: ['Sehat', 'Tidak Sehat'],
-                datasets: [{
-                    data: [87.52, 12.48], // Persentase Sehat dan Tidak Sehat
-                    backgroundColor: ['#28a745', '#dc3545'],
-                    borderWidth: 1
-                }]
-            };
-
-            const dataAdaptif = {
-                labels: ['Sehat', 'Tidak Sehat'],
-                datasets: [{
-                    data: [85.83, 14.17], // Persentase Sehat dan Tidak Sehat
-                    backgroundColor: ['#28a745', '#dc3545'],
-                    borderWidth: 1
-                }]
-            };
-
-            const dataKolaboratif = {
-                labels: ['Sehat', 'Tidak Sehat'],
-                datasets: [{
-                    data: [86.23, 13.77], // Persentase Sehat dan Tidak Sehat
-                    backgroundColor: ['#28a745', '#dc3545'],
-                    borderWidth: 1
-                }]
-            };
-
-            // Konfigurasi untuk masing-masing chart
-            const config = (data) => ({
+            const chartConfig = (data, chartId, modalId, tableBodyId) => ({
                 type: 'pie',
-                data: data,
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        data: data.data,
+                        backgroundColor: ['#28a745', '#dc3545']
+                    }]
+                },
                 options: {
                     responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function (tooltipItem) {
-                                    return tooltipItem.label + ': ' + tooltipItem.raw + '%';
-                                }
-                            }
+                    onClick: function (event, elements) {
+                        if (elements.length > 0) {
+                            const index = elements[0].index;
+                            const label = this.data.labels[index];
+                            const percentage = this.data.datasets[0].data[index];
+
+                            // Show modal with data
+                            const modal = new bootstrap.Modal(document.getElementById(modalId));
+
+                            // Populate table inside modal
+                            const tableBody = document.querySelector(tableBodyId);
+                            tableBody.innerHTML = `<tr><td>${label}</td><td>${percentage}%</td></tr>`;
+
+                            // Show the modal
+                            modal.show();
                         }
                     }
                 }
             });
 
-            // Membuat chart untuk setiap core value
-            new Chart(document.getElementById('akhlak-amanah-chart'), config(dataAmanah));
-            new Chart(document.getElementById('akhlak-kompeten-chart'), config(dataKompeten));
-            new Chart(document.getElementById('akhlak-harmonis-chart'), config(dataHarmonis));
-            new Chart(document.getElementById('akhlak-loyal-chart'), config(dataLoyal));
-            new Chart(document.getElementById('akhlak-adaptif-chart'), config(dataAdaptif));
-            new Chart(document.getElementById('akhlak-kolaboratif-chart'), config(dataKolaboratif));
+            // Initialize all charts
+            new Chart(document.getElementById('akhlak-amanah-chart'), chartConfig(pieChartData.amanah, 'akhlak-amanah-chart', 'modal-amanah', '#table-body-amanah'));
+            new Chart(document.getElementById('akhlak-kompeten-chart'), chartConfig(pieChartData.kompeten, 'akhlak-kompeten-chart', 'modal-kompeten', '#table-body-kompeten'));
+            new Chart(document.getElementById('akhlak-harmonis-chart'), chartConfig(pieChartData.harmonis, 'akhlak-harmonis-chart', 'modal-harmonis', '#table-body-harmonis'));
+            new Chart(document.getElementById('akhlak-loyal-chart'), chartConfig(pieChartData.loyal, 'akhlak-loyal-chart', 'modal-loyal', '#table-body-loyal'));
+            new Chart(document.getElementById('akhlak-adaptif-chart'), chartConfig(pieChartData.adaptif, 'akhlak-adaptif-chart', 'modal-adaptif', '#table-body-adaptif'));
+            new Chart(document.getElementById('akhlak-kolaboratif-chart'), chartConfig(pieChartData.kolaboratif, 'akhlak-kolaboratif-chart', 'modal-kolaboratif', '#table-body-kolaboratif'));
         });
-
     </script>
 </body>
 
