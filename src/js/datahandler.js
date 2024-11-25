@@ -1,3 +1,8 @@
+document.getElementById('kategoridropdown').addEventListener('change', (event) => {
+  const selectedCategory = event.target.value;
+  console.log(`Selected category: ${selectedCategory}`);
+  // You can add additional logic here to handle the selected category change
+});
 
 // Event listener for the file input
 document.getElementById('fileInput').addEventListener('change', handleFile);
