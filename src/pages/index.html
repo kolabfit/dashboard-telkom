@@ -30,12 +30,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .doughnut-chart {
-            max-width: 250px; /* Atur lebar maksimal */
-            max-height: 250px; /* Atur tinggi maksimal */
-            margin: 0 auto; /* Tengah secara horizontal */
+            max-width: 250px;
+            /* Atur lebar maksimal */
+            max-height: 250px;
+            /* Atur tinggi maksimal */
+            margin: 0 auto;
+            /* Tengah secara horizontal */
         }
     </style>
-    
+
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -43,66 +46,36 @@
         <nav class="app-header navbar navbar-expand bg-body">
             <div class="container-fluid">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="index.html"><i class="nav-link bi bi-house"></i></a>
-                    </li>
-                    <li class="nav-item d-none d-md-block"> <a href="index.html" class="nav-link">Home</a> </li>
-                    <li class="nav-item d-none d-md-block"> <a href="hal2.html" class="nav-link">Halaman 2</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="index.html" class="nav-link"
+                            style="color: blue;">Summary</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="hal2.html" class="nav-link"
+                            style="color: grey;">Details</a> </li>
                 </ul>
 
             </div>
         </nav>
 
         <main class="app-main">
-            <div class="app-content-header">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h3 class="mb-0">Summary</h3>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-end">
-                                <li class="breadcrumb-item">
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    Dashboard
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="app-content">
                 <div class="container-fluid">
-                    <div class="row ">
-                        <div class="col-lg-4 col-12 ">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center mt-4">
                             <div class="dropdown-container">
                                 <div class="dropdown">
                                     <select class="form-select btn btn-primary btn-lg" aria-label="First dropdown"
                                         id="kategoridropdown">
                                         <option value="" disabled selected>Pilih Kategori</option>
-                                        <option value="1">Parent</option>
-                                        <option value="2">Anak Perusahaan (Telkomsel)</option>
-                                        <option value="3">Anak Perusahaan (Diluar Telkomsel)</option>
+                                        <option value="1">Telkom Parent</option>
+                                        <option value="2">Telkom Group (AP)</option>
+                                        <option value="3">Telkom Group (-TSEL)</option>
                                     </select>
-                                    <!-- <div class="dropdown-menu dropdown-menu-end" id="menu1">
-                                        <button class="dropdown-item"
-                                            onclick="updateSelectedOption('Sub Option 1.1', 'menu1')">Sub Option
-                                            1.1</button>
-                                        <button class="dropdown-item"
-                                            onclick="updateSelectedOption('Sub Option 1.2', 'menu1')">Sub Option
-                                            1.2</button>
-                                        <button class="dropdown-item"
-                                            onclick="updateSelectedOption('Sub Option 1.3', 'menu1')">Sub Option
-                                            1.3</button>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <h3 class="pt-4 fw-bold">Karakteristik</h3>
                     <div id="selected-output" class="selected-option text-center mb-3"></div>
-                    <div class="row mt-4"> <!-- Row untuk menyusun card dalam satu baris -->
+                    <div class="row"> <!-- Row untuk menyusun card dalam satu baris -->
                         <!-- Card Generasi -->
                         <div class="col-lg-4 col-md-4 col-sm-12">
                             <div class="card" style="height: 100%;">
@@ -170,241 +143,8 @@
                         </div>
                     </div>
 
-                    <!-- IMPLEMENTASI AKHLAK -->
-                    <div class="card my-4">
-                        <div class="card-header border-0">
-                            <div class="d-flex justify-content-between">
-                                <h3 class="card-title">Implementasi Akhlak</h3>
-                            </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="row">
-                                <!-- Chart Amanah -->
-                                <div class="col-lg-2 col-md-4 col-sm-6">
-                                    <div>
-                                        <canvas id="akhlak-amanah-chart" class="doughnut-chart"
-                                            style="max-width: 100%;"></canvas>
-                                        <h5 class="mt-3">AMANAH</h5>
-                                        <h5>86,40% SEHAT</h5>
-                                    </div>
-                                </div>
-                                <!-- Chart Kompeten -->
-                                <div class="col-lg-2 col-md-4 col-sm-6">
-                                    <div>
-                                        <canvas id="akhlak-kompeten-chart" class="doughnut-chart"
-                                            style="max-width: 100%;"></canvas>
-                                        <h5 class="mt-3">KOMPETEN</h5>
-                                        <h5>86,51% SEHAT</h5>
-                                    </div>
-                                </div>
-                                <!-- Chart Harmonis -->
-                                <div class="col-lg-2 col-md-4 col-sm-6">
-                                    <div>
-                                        <canvas id="akhlak-harmonis-chart" class="doughnut-chart"
-                                            style="max-width: 100%;"></canvas>
-                                        <h5 class="mt-3">HARMONIS</h5>
-                                        <h5>87,50% SEHAT</h5>
-                                    </div>
-                                </div>
-                                <!-- Chart Loyal -->
-                                <div class="col-lg-2 col-md-4 col-sm-6">
-                                    <div>
-                                        <canvas id="akhlak-loyal-chart" class="doughnut-chart"
-                                            style="max-width: 100%;"></canvas>
-                                        <h5 class="mt-3">LOYAL</h5>
-                                        <h5>87,52% SEHAT</h5>
-                                    </div>
-                                </div>
-                                <!-- Chart Adaptif -->
-                                <div class="col-lg-2 col-md-4 col-sm-6">
-                                    <div>
-                                        <canvas id="akhlak-adaptif-chart" class="doughnut-chart"
-                                            style="max-width: 100%;"></canvas>
-                                        <h5 class="mt-3">ADAPTIF</h5>
-                                        <h5>85,83% SEHAT</h5>
-                                    </div>
-                                </div>
-                                <!-- Chart Kolaboratif -->
-                                <div class="col-lg-2 col-md-4 col-sm-6">
-                                    <div>
-                                        <canvas id="akhlak-kolaboratif-chart" class="doughnut-chart"
-                                            style="max-width: 100%;"></canvas>
-                                        <h5 class="mt-3">KOLABORATIF</h5>
-                                        <h5>86,23% SEHAT</h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal for Amanah -->
-                            <div class="modal fade" id="modal-amanah" tabindex="-1" aria-labelledby="modal-amanah-label"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-amanah-label">Detail Data AMANAH</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-amanah">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Repeat for each modal (kompeten, harmonis, loyal, adaptif, kolaboratif) -->
-
-
-                            <!-- Modal for Kompeten -->
-                            <div class="modal fade" id="modal-kompeten" tabindex="-1"
-                                aria-labelledby="modal-kompeten-label" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-kompeten-label">Detail Data KOMPETEN</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-kompeten">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal for Harmonis -->
-                            <div class="modal fade" id="modal-harmonis" tabindex="-1"
-                                aria-labelledby="modal-harmonis-label" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-harmonis-label">Detail Data HARMONIS</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-harmonis">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal for Loyal -->
-                            <div class="modal fade" id="modal-loyal" tabindex="-1" aria-labelledby="modal-loyal-label"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-loyal-label">Detail Data LOYAL</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-loyal">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal for Adaptif -->
-                            <div class="modal fade" id="modal-adaptif" tabindex="-1"
-                                aria-labelledby="modal-adaptif-label" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-adaptif-label">Detail Data ADAPTIF</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-adaptif">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal for Kolaboratif -->
-                            <div class="modal fade" id="modal-kolaboratif" tabindex="-1"
-                                aria-labelledby="modal-kolaboratif-label" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-kolaboratif-label">Detail Data KOLABORATIF
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-kolaboratif">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
+                    <div class="row mt-4">
+                        <h3 class="pt-4 fw-bold">Pengurutan Index</h3>
                         <!-- Card Implementasi AKHLAK -->
                         <div class="col-md-6 col-12">
                             <div class="text-center">
@@ -764,7 +504,7 @@
                                     <h5>Intervensi Pimpinan, Sistem, & Simbol</h5>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <canvas id="intervention-leader-chart" class="doughnut-chart" ></canvas>
+                                            <canvas id="intervention-leader-chart" class="doughnut-chart"></canvas>
                                             <h6>Intervensi Pimpinan</h6>
                                         </div>
                                         <div class="col-md-4">
