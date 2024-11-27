@@ -28,7 +28,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-knob@1.2.13/dist/jquery.knob.min.css" />
     <link rel="stylesheet" href="path/to/jqwidgets/styles/jqx.base.css" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <style>
+        .doughnut-chart {
+            max-width: 250px; /* Atur lebar maksimal */
+            max-height: 250px; /* Atur tinggi maksimal */
+            margin: 0 auto; /* Tengah secara horizontal */
+        }
+    </style>
+    
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -164,7 +171,7 @@
                     </div>
 
                     <!-- IMPLEMENTASI AKHLAK -->
-                    <div class="card mt-4 mb-4">
+                    <div class="card my-4">
                         <div class="card-header border-0">
                             <div class="d-flex justify-content-between">
                                 <h3 class="card-title">Implementasi Akhlak</h3>
@@ -406,7 +413,7 @@
                                         <h5>Implementasi AKHLAK</h5>
                                         <!-- Pie Chart -->
                                         <div class="d-flex justify-content-center align-items-center mt-3"
-                                            style="height: 250px;">
+                                            style="height: 243px;">
                                             <canvas id="pie-akhlak"></canvas>
                                         </div>
                                         <h5 class="mt-3">87,41% SEHAT</h5>
@@ -746,6 +753,54 @@
                                             </table>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5>Intervensi Pimpinan, Sistem, & Simbol</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <canvas id="intervention-leader-chart" class="doughnut-chart" ></canvas>
+                                            <h6>Intervensi Pimpinan</h6>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <canvas id="intervention-system-chart" class="doughnut-chart"></canvas>
+                                            <h6>Intervensi Sistem</h6>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <canvas id="intervention-symbol-chart" class="doughnut-chart"></canvas>
+                                            <h6>Intervensi Simbol</h6>
+                                        </div>
+                                    </div>
+                                    <table class="table mt-3">
+                                        <thead>
+                                            <tr>
+                                                <th>Kategori</th>
+                                                <th>Range Index</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="badge bg-success">Melebihi
+                                                        standar</span></td>
+                                                <td>2 &lt; X &le; 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-warning">Memenuhi
+                                                        standar</span></td>
+                                                <td>1 &lt; X &le; 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="badge bg-danger">Kurang
+                                                        memenuhi standar</span></td>
+                                                <td>X &le; 1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -1350,6 +1405,53 @@
             new Chart(document.getElementById('akhlak-loyal-chart'), chartConfig(pieChartData.loyal, 'akhlak-loyal-chart', 'modal-loyal', '#table-body-loyal'));
             new Chart(document.getElementById('akhlak-adaptif-chart'), chartConfig(pieChartData.adaptif, 'akhlak-adaptif-chart', 'modal-adaptif', '#table-body-adaptif'));
             new Chart(document.getElementById('akhlak-kolaboratif-chart'), chartConfig(pieChartData.kolaboratif, 'akhlak-kolaboratif-chart', 'modal-kolaboratif', '#table-body-kolaboratif'));
+        });
+
+        //chart card intervensi pimpinan dll
+        // Data untuk pie charts
+        const leaderData = [30, 50, 20]; // Contoh data
+        const systemData = [40, 35, 25]; // Contoh data
+        const symbolData = [25, 25, 50]; // Contoh data
+
+        const backgroundColors = ['#28a745', '#ffc107', '#dc3545'];
+
+        // Intervensi Pimpinan Chart
+        const leaderCtx = document.getElementById('intervention-leader-chart').getContext('2d');
+        new Chart(leaderCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
+                datasets: [{
+                    data: leaderData,
+                    backgroundColor: backgroundColors
+                }]
+            }
+        });
+
+        // Intervensi Sistem Chart
+        const systemCtx = document.getElementById('intervention-system-chart').getContext('2d');
+        new Chart(systemCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
+                datasets: [{
+                    data: systemData,
+                    backgroundColor: backgroundColors
+                }]
+            }
+        });
+
+        // Intervensi Simbol Chart
+        const symbolCtx = document.getElementById('intervention-symbol-chart').getContext('2d');
+        new Chart(symbolCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
+                datasets: [{
+                    data: symbolData,
+                    backgroundColor: backgroundColors
+                }]
+            }
         });
     </script>
 </body>
