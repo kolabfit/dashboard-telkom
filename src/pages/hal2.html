@@ -622,7 +622,57 @@
                     </div>
                 </div>
             </div>
+            <!-- Radar Chart Section -->
+            <div class="card mt-4 mx-4">
+                <div class="card-header">
+                    <h5 class="card-title text-center">New Radar Chart Example</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+                        <canvas id="newRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NPS -->
+            <div class="card text-center section mx-4">
+                <div class="card-body">
+                    <h6>Net Promoter Score (NPS)</h6>
+                    <!-- NPS values will be inserted here by JavaScript -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <div class="chart-container" style="height: 300px;">
+                                <canvas id="npsBarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tabel Keterangan -->
+                    <table class="table mt-4">
+                        <thead>
+                            <tr class="table-title">
+                                <th>Kategori</th>
+                                <th>Range Skor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-danger">Detractors</span></td>
+                                <td>0 - 6</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-warning">Passives</span></td>
+                                <td>7 - 8</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-success">Promoters</span></td>
+                                <td>9 - 10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </main>
+
         <footer class="app-footer">
             <div class="float-end d-none d-sm-inline">Copyright &copy; 2024&nbsp;</div>
             Designed by <a href="https://kolab-landing.pages.dev/" class="text-decoration-none">Ko+Lab</a></strong>
@@ -631,6 +681,172 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // NPS Bar Chart - Comparison 2023 vs 2024
+            const ctxBar = document.getElementById('npsBarChart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: ['Detractors'],
+                    datasets: [{
+                        label: '2023',
+                        data: [20],
+                        backgroundColor: 'rgba(211, 211, 211, 1)',
+                        borderColor: 'rgba(211, 211, 211, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '2024',
+                        data: [55],
+                        backgroundColor: 'rgba(0, 100, 0, 1)',
+                        borderColor: 'rgba(0, 100, 0, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Percentage'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'NPS Distribution: 2023 vs 2024'
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+
+            // NPS Pie Chart (2024 data)
+            const ctxPie = document.getElementById('npsPieChart').getContext('2d');
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    labels: ['Detractors', 'Passives', 'Promoters'],
+                    datasets: [{
+                        data: [15, 25, 60],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(255, 205, 86, 0.8)',
+                            'rgba(75, 192, 192, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'NPS Composition 2024'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Calculate and display NPS
+            function calculateNPS(promoters, passives, detractors) {
+                const total = promoters + passives + detractors;
+                const nps = ((promoters / total) - (detractors / total)) * 100;
+                return nps.toFixed(2);
+            }
+
+            const nps2023 = calculateNPS(50, 30, 20);
+            const nps2024 = calculateNPS(60, 25, 15);
+
+            const npsDisplay = document.createElement('div');
+            npsDisplay.innerHTML = `
+                <h4 class="mt-3">Net Promoter Score (NPS)</h4>
+                <p>2023 NPS: ${nps2023}</p>
+                <p>2024 NPS: ${nps2024}</p>
+            `;
+            document.querySelector('.card-body').insertBefore(npsDisplay, document.querySelector('.row'));
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('newRadarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Digital Mindset', 'Customer Centricity', 'Collaboration', 'Innovation', 'Agility', 'Data-Driven'],
+                    datasets: [{
+                        label: 'Current State',
+                        data: [75, 68, 80, 72, 70, 65],
+                        fill: true,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        pointBackgroundColor: 'rgb(54, 162, 235)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(54, 162, 235)'
+                    }, {
+                        label: 'Target State',
+                        data: [90, 85, 95, 88, 92, 87],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        pointBackgroundColor: 'rgb(255, 99, 132)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(255, 99, 132)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: {
+                                stepSize: 20
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Digital Transformation Progress'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
     <script>
         // Chart Readiness to Change
         const ctxReadiness = document.getElementById('chart-readiness').getContext('2d');
