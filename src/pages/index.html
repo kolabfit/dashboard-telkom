@@ -2,1198 +2,1175 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard Telkom</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="KoLab">
-    <meta name="description" content="Dashboard Telkom">
-    <!--Fonts-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
-        integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous">
-    <!-- (OverlayScrollbars)-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css"
-        integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
-    <!-- (Bootstrap Icons)-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
-        integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
-    <!-- AdminLTE CSS -->
-    <link rel="stylesheet" href="../css/adminlte.css">
-    <!-- apexcharts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
-        integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
-    <!-- jsvectormap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
-        integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
-    <!-- jquery.knob -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-knob@1.2.13/dist/jquery.knob.min.css" />
-    <link rel="stylesheet" href="path/to/jqwidgets/styles/jqx.base.css" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .doughnut-chart {
-            max-width: 250px;
-            /* Atur lebar maksimal */
-            max-height: 250px;
-            /* Atur tinggi maksimal */
-            margin: 0 auto;
-            /* Tengah secara horizontal */
-        }
-    </style>
+  <title>Dashboard Telkom</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="KoLab">
+  <meta name="description" content="Dashboard Telkom">
+  <base target="_top">
+  <!--Fonts-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+    integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous">
+  <!-- (OverlayScrollbars)-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css"
+    integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
+  <!-- (Bootstrap Icons)-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
+    integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
+  <!-- AdminLTE CSS -->
+  <link rel="stylesheet" href="../css/adminlte.css">
+  <!-- apexcharts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+    integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
+  <!-- jsvectormap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
+    integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
+  <!-- jquery.knob -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-knob@1.2.13/dist/jquery.knob.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .doughnut-chart {
+      max-width: 250px;
+      /* Atur lebar maksimal */
+      max-height: 250px;
+      /* Atur tinggi maksimal */
+      margin: 0 auto;
+      /* Tengah secara horizontal */
+    }
+  </style>
 
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <div class="app-wrapper">
-        <nav class="app-header navbar navbar-expand bg-body">
-            <div class="container-fluid">
-                <ul class="navbar-nav">
-                    <li class="nav-item d-none d-md-block"> <a href="index.html" class="nav-link"
-                            style="color: blue;">Summary</a> </li>
-                    <li class="nav-item d-none d-md-block"> <a href="hal2.html" class="nav-link"
-                            style="color: grey;">Details</a> </li>
-                </ul>
+  <div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item d-none d-md-block"> <a href="index.html" class="nav-link"
+              style="color: blue;">Summary</a> </li>
+          <li class="nav-item d-none d-md-block"> <a href="hal2.html" class="nav-link"
+              style="color: grey;">Details</a> </li>
+        </ul>
 
-            </div>
-        </nav>
+      </div>
+    </nav>
 
-        <main class="app-main">
-            <div class="app-content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-center align-items-center mt-4">
-                            <div class="dropdown-container">
-                                <div class="dropdown">
-                                    <select class="form-select btn btn-primary btn-lg" aria-label="First dropdown"
-                                        id="kategoridropdown">
-                                        <option value="" disabled selected>Pilih Kategori</option>
-                                        <option value="1">Telkom Parent</option>
-                                        <option value="2">Telkom Group (AP)</option>
-                                        <option value="3">Telkom Group (-TSEL)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="pt-4 fw-bold">Karakteristik</h3>
-                    <div id="selected-output" class="selected-option text-center mb-3"></div>
-                    <div class="row"> <!-- Row untuk menyusun card dalam satu baris -->
-                        <!-- Card Generasi -->
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="card" style="height: 100%;">
-                                <div class="card-header">
-                                    <h3 class="card-title">Generasi</h3>
-                                </div>
-                                <div class="card-body mt-5">
-                                    <div id="revenue-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card Kelamin -->
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="card" style="height: 100%;">
-                                <div class="card-header ">
-                                    <h3 class="card-title">Kelamin</h3>
-                                </div>
-                                <div class="card-body">
-                                    <div id="pie-chart"></div>
-                                </div>
-                                <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <p style="color: #0d6efd;"><i class="bi bi-gender-male"></i>
-                                                <strong>Pria</strong>
-                                            </p>
-                                        </div>
-                                        <div class="col-6">
-                                            <p style="color: #d63384;"><i class="bi bi-gender-female"></i>
-                                                <strong>Wanita</strong>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card Band Posisi -->
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="d-flex justify-content-between">
-                                        <h3 class="card-title">Band Posisi</h3>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <p class="d-flex flex-column">
-                                            <span class="fw-bold fs-5">2.766</span>
-                                            <span>Total</span>
-                                        </p>
-                                        <p class="ms-auto d-flex flex-column text-end">
-                                            <span class="text-success">
-                                                <i class="bi bi-arrow-up"></i> 33.1%
-                                            </span>
-                                            <span class="text-secondary">Since Past Year</span>
-                                        </p>
-                                    </div>
-                                    <div class="position-relative mb-4">
-                                        <div id="sales-charts" style="height: 200px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-4">
-                        <h3 class="pt-4 fw-bold">Pengurutan Index</h3>
-                        <!-- Card Implementasi AKHLAK -->
-                        <div class="col-md-6 col-12">
-                            <div class="text-center">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h5>Implementasi AKHLAK</h5>
-                                        <!-- Pie Chart -->
-                                        <div class="d-flex justify-content-center align-items-center mt-3"
-                                            style="height: 243px;">
-                                            <canvas id="pie-akhlak"></canvas>
-                                        </div>
-                                        <h5 class="mt-3">87,41% SEHAT</h5>
-                                        <table class="table mt-3">
-                                            <thead>
-                                                <tr>
-                                                    <th>Kategori</th>
-                                                    <th>Range Index</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="filter-category" data-label="Sehat">
-                                                    <td><span class="badge bg-success">Sehat</span></td>
-                                                    <td>75% - 100%</td>
-                                                </tr>
-                                                <tr class="filter-category" data-label="Cukup Sehat">
-                                                    <td><span class="badge bg-warning">Cukup Sehat</span></td>
-                                                    <td>50% - 74,9%</td>
-                                                </tr>
-                                                <tr class="filter-category" data-label="Tidak Sehat">
-                                                    <td><span class="badge"
-                                                            style="background-color: #FFA500; color: white;">Tidak
-                                                            Sehat</span></td>
-                                                    <td>25% - 49,5%</td>
-                                                </tr>
-                                                <tr class="filter-category" data-label="Sangat Tidak Sehat">
-                                                    <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
-                                                    <td>0% - 24,9%</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal for Implementasi AKHLAK -->
-                            <div class="modal fade" id="modal-akhlak" tabindex="-1" aria-labelledby="modal-akhlak-label"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-akhlak-label">Detail Data Implementasi
-                                                AKHLAK</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-akhlak">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- New column for DCI -->
-                        <div class="col-md-6 col-12">
-                            <div class="text-center">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h5>Digital Culture Index</h5>
-                                        <div class="d-flex justify-content-center align-items-center"
-                                            style="height: 250px;">
-                                            <canvas id="pie-dci"></canvas>
-                                        </div>
-                                        <h5 class="mt-3">87,41% SEHAT</h5>
-                                        <table class="table mt-3">
-                                            <thead>
-                                                <tr>
-                                                    <th>Kategori</th>
-                                                    <th>Range Index</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><span class="badge bg-success">Sehat</span></td>
-                                                    <td>75% - 100%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-warning">Cukup Sehat</span></td>
-                                                    <td>50% - 74,9%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge"
-                                                            style="background-color: #FFA500; color: white;">Tidak
-                                                            Sehat</span></td>
-                                                    <td>25% - 49,5%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
-                                                    <td>0% - 24,9%</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal for Digital Culture Index -->
-                            <div class="modal fade" id="modal-dci" tabindex="-1" aria-labelledby="modal-dci-label"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-dci-label">Detail Data Digital Culture
-                                                Index</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-dci">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- /.col -->
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-md-4 col-6">
-                            <div class="text-center border-end">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h5>Net Promoter Score</h5>
-                                        <div class="d-flex justify-content-center align-items-center"
-                                            style="height: 250px;">
-                                            <canvas id="pie-nps"></canvas>
-                                        </div>
-                                        <h5 class="mt-3">87,41% SEHAT</h5>
-                                        <table class="table mt-3">
-                                            <thead>
-                                                <tr>
-                                                    <th>Kategori</th>
-                                                    <th>Range Index</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><span class="badge bg-success">Sehat</span></td>
-                                                    <td>75% - 100%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-warning">Cukup Sehat</span></td>
-                                                    <td>50% - 74,9%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge"
-                                                            style="background-color: #FFA500; color: white;">Tidak
-                                                            Sehat</span></td>
-                                                    <td>25% - 49,5%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
-                                                    <td>0% - 24,9%</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal for NPS -->
-                            <div class="modal fade" id="modal-nps" tabindex="-1" aria-labelledby="modal-nps-label"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-nps">Detail Data Net Promoter Score
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-nps">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- /.col -->
-
-                        <div class="col-md-4 col-6">
-                            <div class="text-center border-end">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h5>Penerimaan</h5>
-                                        <div class="d-flex justify-content-center align-items-center"
-                                            style="height: 250px;">
-                                            <canvas id="pie-penerimaan"></canvas>
-                                        </div>
-                                        <h5 class="mt-3">87,41% SEHAT</h5>
-                                        <table class="table mt-3">
-                                            <thead>
-                                                <tr>
-                                                    <th>Kategori</th>
-                                                    <th>Range Index</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><span class="badge bg-success">Sehat</span></td>
-                                                    <td>75% - 100%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-warning">Cukup Sehat</span></td>
-                                                    <td>50% - 74,9%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge"
-                                                            style="background-color: #FFA500; color: white;">Tidak
-                                                            Sehat</span></td>
-                                                    <td>25% - 49,5%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
-                                                    <td>0% - 24,9%</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal for Penerimaan -->
-                            <div class="modal fade" id="modal-penerimaan" tabindex="-1"
-                                aria-labelledby="modal-penerimaan-label" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-penerimaan">Detail Data Penerimaan
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-penerimaan">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-6">
-                            <div class="text-center border-end">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h5>Readiness to Change</h5>
-                                        <div class="d-flex justify-content-center align-items-center"
-                                            style="height: 250px;">
-                                            <canvas id="pie-readiness"></canvas>
-                                        </div>
-                                        <h5 class="mt-3">87,41% SEHAT</h5>
-                                        <table class="table mt-3">
-                                            <thead>
-                                                <tr>
-                                                    <th>Kategori</th>
-                                                    <th>Range Index</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><span class="badge bg-success">Sehat</span></td>
-                                                    <td>75% - 100%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-warning">Cukup Sehat</span></td>
-                                                    <td>50% - 74,9%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge"
-                                                            style="background-color: #FFA500; color: white;">Tidak
-                                                            Sehat</span></td>
-                                                    <td>25% - 49,5%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
-                                                    <td>0% - 24,9%</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Modal for Readiness to Change -->
-                            <div class="modal fade" id="modal-readiness" tabindex="-1"
-                                aria-labelledby="modal-readiness-label" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modal-readiness">Detail Data Penerimaan
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kategori</th>
-                                                        <th>Persentase</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="table-body-readiness">
-                                                    <!-- Data diisi melalui JavaScript -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-md-12 mb-4">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h5>Intervensi Pimpinan, Sistem, & Simbol</h5>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <canvas id="intervention-leader-chart" class="doughnut-chart"></canvas>
-                                            <h6>Intervensi Pimpinan</h6>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <canvas id="intervention-system-chart" class="doughnut-chart"></canvas>
-                                            <h6>Intervensi Sistem</h6>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <canvas id="intervention-symbol-chart" class="doughnut-chart"></canvas>
-                                            <h6>Intervensi Simbol</h6>
-                                        </div>
-                                    </div>
-                                    <table class="table mt-3">
-                                        <thead>
-                                            <tr>
-                                                <th>Kategori</th>
-                                                <th>Range Index</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><span class="badge bg-success">Melebihi
-                                                        standar</span></td>
-                                                <td>2 &lt; X &le; 3</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="badge bg-warning">Memenuhi
-                                                        standar</span></td>
-                                                <td>1 &lt; X &le; 2</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="badge bg-danger">Kurang
-                                                        memenuhi standar</span></td>
-                                                <td>X &le; 1</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <main class="app-main">
+      <div class="app-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center mt-4">
+              <div class="dropdown-container">
+                <div class="dropdown">
+                  <select class="form-select btn btn-primary btn-lg" aria-label="First dropdown"
+                    id="kategoridropdown">
+                    <option value="" disabled selected>Pilih Kategori</option>
+                    <option value="1">Telkom Parent</option>
+                    <option value="2">Telkom Group (AP)</option>
+                    <option value="3">Telkom Group (-TSEL)</option>
+                  </select>
                 </div>
+              </div>
             </div>
-    </div>
-    </div>
-    </main>
-    <footer class="app-footer">
-        <div class="float-end d-none d-sm-inline">Copyright &copy; 2024&nbsp;</div>
-        Designed by <a href="https://kolab-landing.pages.dev/" class="text-decoration-none">Ko+Lab</a></strong>
-    </footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js"
-        integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script>
+          </div>
+          <h3 class="pt-4 fw-bold">Karakteristik</h3>
+          <div id="selected-output" class="selected-option text-center mb-3"></div>
+          <div class="row"> <!-- Row untuk menyusun card dalam satu baris -->
+            <!-- Card Generasi -->
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card" style="height: 100%;">
+                <div class="card-header">
+                  <h3 class="card-title">Generasi</h3>
+                </div>
+                <div class="card-body mt-5">
+                  <div id="revenue-chart"></div>
+                </div>
+              </div>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+            <!-- Card Kelamin -->
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card" style="height: 100%;">
+                <div class="card-header ">
+                  <h3 class="card-title">Kelamin</h3>
+                </div>
+                <div class="card-body">
+                  <div id="gender-chart"></div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col-6">
+                      <p style="color: #0d6efd;"><i class="bi bi-gender-male"></i>
+                        <strong>Pria</strong>
+                      </p>
+                    </div>
+                    <div class="col-6">
+                      <p style="color: #d63384;"><i class="bi bi-gender-female"></i>
+                        <strong>Wanita</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script>
+            <!-- Card Band Posisi -->
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Band Posisi</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex">
+                    <p class="d-flex flex-column">
+                      <span class="fw-bold fs-5">2.766</span>
+                      <span>Total</span>
+                    </p>
+                    <p class="ms-auto d-flex flex-column text-end">
+                      <span class="text-success">
+                        <i class="bi bi-arrow-up"></i> 33.1%
+                      </span>
+                      <span class="text-secondary">Since Past Year</span>
+                    </p>
+                  </div>
+                  <div class="position-relative mb-4">
+                    <div id="sales-charts" style="height: 200px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- <script src="../../dist/js/adminlte.js"></script> -->
+          <div class="row mt-4">
+            <h3 class="pt-4 fw-bold">Pengurutan Index</h3>
+            <!-- Card Implementasi AKHLAK -->
+            <div class="col-md-6 col-12">
+              <div class="text-center">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5>Implementasi AKHLAK</h5>
+                    <!-- Pie Chart -->
+                    <div class="d-flex justify-content-center align-items-center mt-3"
+                      style="height: 243px;">
+                      <canvas id="pie-akhlak"></canvas>
+                    </div>
+                    <h5 class="mt-3">87,41% SEHAT</h5>
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th>Kategori</th>
+                          <th>Range Index</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="filter-category" data-label="Sehat">
+                          <td><span class="badge bg-success">Sehat</span></td>
+                          <td>75% - 100%</td>
+                        </tr>
+                        <tr class="filter-category" data-label="Cukup Sehat">
+                          <td><span class="badge bg-warning">Cukup Sehat</span></td>
+                          <td>50% - 74,9%</td>
+                        </tr>
+                        <tr class="filter-category" data-label="Tidak Sehat">
+                          <td><span class="badge"
+                              style="background-color: #FFA500; color: white;">Tidak
+                              Sehat</span></td>
+                          <td>25% - 49,5%</td>
+                        </tr>
+                        <tr class="filter-category" data-label="Sangat Tidak Sehat">
+                          <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
+                          <td>0% - 24,9%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for Implementasi AKHLAK -->
+              <div class="modal fade" id="modal-akhlak" tabindex="-1" aria-labelledby="modal-akhlak-label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-akhlak-label">Detail Data Implementasi
+                        AKHLAK</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Kategori</th>
+                            <th>Persentase</th>
+                          </tr>
+                        </thead>
+                        <tbody id="table-body-akhlak">
+                          <!-- Data diisi melalui JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- New column for DCI -->
+            <div class="col-md-6 col-12">
+              <div class="text-center">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5>Digital Culture Index</h5>
+                    <div class="d-flex justify-content-center align-items-center"
+                      style="height: 250px;">
+                      <canvas id="pie-dci"></canvas>
+                    </div>
+                    <h5 class="mt-3">87,41% SEHAT</h5>
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th>Kategori</th>
+                          <th>Range Index</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><span class="badge bg-success">Sehat</span></td>
+                          <td>75% - 100%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-warning">Cukup Sehat</span></td>
+                          <td>50% - 74,9%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge"
+                              style="background-color: #FFA500; color: white;">Tidak
+                              Sehat</span></td>
+                          <td>25% - 49,5%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
+                          <td>0% - 24,9%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for Digital Culture Index -->
+              <div class="modal fade" id="modal-dci" tabindex="-1" aria-labelledby="modal-dci-label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-dci-label">Detail Data Digital Culture
+                        Index</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Kategori</th>
+                            <th>Persentase</th>
+                          </tr>
+                        </thead>
+                        <tbody id="table-body-dci">
+                          <!-- Data diisi melalui JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /.col -->
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-4 col-6">
+              <div class="text-center border-end">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5>Net Promoter Score</h5>
+                    <div class="d-flex justify-content-center align-items-center"
+                      style="height: 250px;">
+                      <canvas id="pie-nps"></canvas>
+                    </div>
+                    <h5 class="mt-3">87,41% SEHAT</h5>
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th>Kategori</th>
+                          <th>Range Index</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><span class="badge bg-success">Sehat</span></td>
+                          <td>75% - 100%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-warning">Cukup Sehat</span></td>
+                          <td>50% - 74,9%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge"
+                              style="background-color: #FFA500; color: white;">Tidak
+                              Sehat</span></td>
+                          <td>25% - 49,5%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
+                          <td>0% - 24,9%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for NPS -->
+              <div class="modal fade" id="modal-nps" tabindex="-1" aria-labelledby="modal-nps-label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-nps">Detail Data Net Promoter Score
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Kategori</th>
+                            <th>Persentase</th>
+                          </tr>
+                        </thead>
+                        <tbody id="table-body-nps">
+                          <!-- Data diisi melalui JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /.col -->
 
-    <script>
-        const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
-        const Default = {
-            scrollbarTheme: "os-theme-light",
-            scrollbarAutoHide: "leave",
-            scrollbarClickScroll: true,
-        };
-        document.addEventListener("DOMContentLoaded", function () {
-            const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
-            if (
-                sidebarWrapper &&
-                typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== "undefined"
-            ) {
-                OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
-                    scrollbars: {
-                        theme: Default.scrollbarTheme,
-                        autoHide: Default.scrollbarAutoHide,
-                        clickScroll: Default.scrollbarClickScroll,
-                    },
-                });
-            }
+            <div class="col-md-4 col-6">
+              <div class="text-center border-end">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5>Penerimaan</h5>
+                    <div class="d-flex justify-content-center align-items-center"
+                      style="height: 250px;">
+                      <canvas id="pie-penerimaan"></canvas>
+                    </div>
+                    <h5 class="mt-3">87,41% SEHAT</h5>
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th>Kategori</th>
+                          <th>Range Index</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><span class="badge bg-success">Sehat</span></td>
+                          <td>75% - 100%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-warning">Cukup Sehat</span></td>
+                          <td>50% - 74,9%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge"
+                              style="background-color: #FFA500; color: white;">Tidak
+                              Sehat</span></td>
+                          <td>25% - 49,5%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
+                          <td>0% - 24,9%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for Penerimaan -->
+              <div class="modal fade" id="modal-penerimaan" tabindex="-1"
+                aria-labelledby="modal-penerimaan-label" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-penerimaan">Detail Data Penerimaan
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Kategori</th>
+                            <th>Persentase</th>
+                          </tr>
+                        </thead>
+                        <tbody id="table-body-penerimaan">
+                          <!-- Data diisi melalui JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-6">
+              <div class="text-center border-end">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5>Readiness to Change</h5>
+                    <div class="d-flex justify-content-center align-items-center"
+                      style="height: 250px;">
+                      <canvas id="pie-readiness"></canvas>
+                    </div>
+                    <h5 class="mt-3">87,41% SEHAT</h5>
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th>Kategori</th>
+                          <th>Range Index</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><span class="badge bg-success">Sehat</span></td>
+                          <td>75% - 100%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-warning">Cukup Sehat</span></td>
+                          <td>50% - 74,9%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge"
+                              style="background-color: #FFA500; color: white;">Tidak
+                              Sehat</span></td>
+                          <td>25% - 49,5%</td>
+                        </tr>
+                        <tr>
+                          <td><span class="badge bg-danger">Sangat Tidak Sehat</span></td>
+                          <td>0% - 24,9%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal for Readiness to Change -->
+              <div class="modal fade" id="modal-readiness" tabindex="-1"
+                aria-labelledby="modal-readiness-label" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-readiness">Detail Data Penerimaan
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Kategori</th>
+                            <th>Persentase</th>
+                          </tr>
+                        </thead>
+                        <tbody id="table-body-readiness">
+                          <!-- Data diisi melalui JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12 mb-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h5>Intervensi Pimpinan, Sistem, & Simbol</h5>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <canvas id="intervention-leader-chart" class="doughnut-chart"></canvas>
+                      <h6>Intervensi Pimpinan</h6>
+                    </div>
+                    <div class="col-md-4">
+                      <canvas id="intervention-system-chart" class="doughnut-chart"></canvas>
+                      <h6>Intervensi Sistem</h6>
+                    </div>
+                    <div class="col-md-4">
+                      <canvas id="intervention-symbol-chart" class="doughnut-chart"></canvas>
+                      <h6>Intervensi Simbol</h6>
+                    </div>
+                  </div>
+                  <table class="table mt-3">
+                    <thead>
+                      <tr>
+                        <th>Kategori</th>
+                        <th>Range Index</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="badge bg-success">Melebihi
+                            standar</span></td>
+                        <td>2 &lt; X &le; 3</td>
+                      </tr>
+                      <tr>
+                        <td><span class="badge bg-warning">Memenuhi
+                            standar</span></td>
+                        <td>1 &lt; X &le; 2</td>
+                      </tr>
+                      <tr>
+                        <td><span class="badge bg-danger">Kurang
+                            memenuhi standar</span></td>
+                        <td>X &le; 1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  </main>
+  <footer class="app-footer">
+    <div class="float-end d-none d-sm-inline">Copyright &copy; 2024&nbsp;</div>
+    Designed by <a href="https://kolab-landing.pages.dev/" class="text-decoration-none">Ko+Lab</a></strong>
+  </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js"
+    integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script>
+
+  <!-- <script src="../../dist/js/adminlte.js"></script> -->
+
+  <script>
+    const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
+    const Default = {
+      scrollbarTheme: "os-theme-light",
+      scrollbarAutoHide: "leave",
+      scrollbarClickScroll: true,
+    };
+    document.addEventListener("DOMContentLoaded", function() {
+      const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
+      if (
+        sidebarWrapper &&
+        typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== "undefined"
+      ) {
+        OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+          scrollbars: {
+            theme: Default.scrollbarTheme,
+            autoHide: Default.scrollbarAutoHide,
+            clickScroll: Default.scrollbarClickScroll,
+          },
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
-        integrity="sha256-ipiJrswvAR4VAx/th+6zWsdeYmVae0iJuiR+6OqHJHQ=" crossorigin="anonymous"></script>
-    <!-- sortablejs -->
-    <script>
-        const connectedSortables =
-            document.querySelectorAll(".connectedSortable");
-        connectedSortables.forEach((connectedSortable) => {
-            let sortable = new Sortable(connectedSortable, {
-                group: "shared",
-                handle: ".card-header",
-            });
-        });
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+    integrity="sha256-ipiJrswvAR4VAx/th+6zWsdeYmVae0iJuiR+6OqHJHQ=" crossorigin="anonymous"></script>
+  <!-- sortablejs -->
+  <script>
+    const connectedSortables =
+      document.querySelectorAll(".connectedSortable");
+    connectedSortables.forEach((connectedSortable) => {
+      let sortable = new Sortable(connectedSortable, {
+        group: "shared",
+        handle: ".card-header",
+      });
+    });
 
-        const cardHeaders = document.querySelectorAll(
-            ".connectedSortable .card-header",
-        );
-        cardHeaders.forEach((cardHeader) => {
-            cardHeader.style.cursor = "move";
-        });
-    </script> <!-- apexcharts -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
-        integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script>
-    <!-- ChartJS -->
-    <script>
-        // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
-        // IT'S ALL JUST JUNK FOR DEMO
-        // ++++++++++++++++++++++++++++++++++++++++++
+    const cardHeaders = document.querySelectorAll(
+      ".connectedSortable .card-header",
+    );
+    cardHeaders.forEach((cardHeader) => {
+      cardHeader.style.cursor = "move";
+    });
+  </script> <!-- apexcharts -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
+    integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script>
+  <!-- ChartJS -->
+  <script>
+    // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
+    // IT'S ALL JUST JUNK FOR DEMO
+    // ++++++++++++++++++++++++++++++++++++++++++
 
-        const sales_chart_options = {
-            series: [{
-                name: "Digital Goods",
-                data: [28, 48, 40, 19, 86],
+    const sales_chart_options = {
+      series: [{
+          name: "Digital Goods",
+          data: [28, 48, 40, 19, 86],
+        },
+        {
+          name: "Electronics",
+          data: [65, 59, 80, 81, 56],
+        },
+      ],
+      chart: {
+        height: 300,
+        type: "area",
+        toolbar: {
+          show: false,
+        },
+      },
+      legend: {
+        show: false,
+      },
+      colors: ["#0d6efd", "#20c997"],
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      xaxis: {
+        type: "string",
+        categories: [
+          "Baby Boomer",
+          "Gen X",
+          "Junior Millenial",
+          "Senior Millenial",
+          "Gen Z",
+        ],
+      },
+      tooltip: {
+        x: {
+          format: "MMMM yyyy",
+        },
+      },
+    };
+
+    const sales_chart = new ApexCharts(
+      document.querySelector("#revenue-chart"),
+      sales_chart_options,
+    );
+    sales_chart.render();
+  </script> <!-- jsvectormap -->
+  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
+    integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
+    integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY=" crossorigin="anonymous"></script>
+  <!-- jsvectormap -->
+  <script>
+    const visitorsData = {
+      US: 398, // USA
+      SA: 400, // Saudi Arabia
+      CA: 1000, // Canada
+      DE: 500, // Germany
+      FR: 760, // France
+      CN: 300, // China
+      AU: 700, // Australia
+      BR: 600, // Brazil
+      IN: 800, // India
+      GB: 320, // Great Britain
+      RU: 3000, // Russia
+    };
+
+    // World map by jsVectorMap
+    const map = new jsVectorMap({
+      selector: "#world-map",
+      map: "world",
+    });
+
+    // Sparkline charts
+    const option_sparkline1 = {
+      series: [{
+        data: [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021],
+      }, ],
+      chart: {
+        type: "area",
+        height: 50,
+        sparkline: {
+          enabled: true,
+        },
+      },
+      stroke: {
+        curve: "straight",
+      },
+      fill: {
+        opacity: 0.3,
+      },
+      yaxis: {
+        min: 0,
+      },
+      colors: ["#DCE6EC"],
+    };
+
+    const sparkline1 = new ApexCharts(
+      document.querySelector("#sparkline-1"),
+      option_sparkline1,
+    );
+    sparkline1.render();
+
+    const option_sparkline2 = {
+      series: [{
+        data: [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921],
+      }, ],
+      chart: {
+        type: "area",
+        height: 50,
+        sparkline: {
+          enabled: true,
+        },
+      },
+      stroke: {
+        curve: "straight",
+      },
+      fill: {
+        opacity: 0.3,
+      },
+      yaxis: {
+        min: 0,
+      },
+      colors: ["#DCE6EC"],
+    };
+
+    const sparkline2 = new ApexCharts(
+      document.querySelector("#sparkline-2"),
+      option_sparkline2,
+    );
+    sparkline2.render();
+
+    const option_sparkline3 = {
+      series: [{
+        data: [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21],
+      }, ],
+      chart: {
+        type: "area",
+        height: 50,
+        sparkline: {
+          enabled: true,
+        },
+      },
+      stroke: {
+        curve: "straight",
+      },
+      fill: {
+        opacity: 0.3,
+      },
+      yaxis: {
+        min: 0,
+      },
+      colors: ["#DCE6EC"],
+    };
+
+    const sparkline3 = new ApexCharts(
+      document.querySelector("#sparkline-3"),
+      option_sparkline3,
+    );
+    sparkline3.render();
+  </script>
+
+  <script>
+    // SALES CHART
+    function toRoman(num) {
+      const romanNumerals = [
+        ["M", 1000],
+        ["CM", 900],
+        ["D", 500],
+        ["CD", 400],
+        ["C", 100],
+        ["XC", 90],
+        ["L", 50],
+        ["XL", 40],
+        ["X", 10],
+        ["IX", 9],
+        ["V", 5],
+        ["IV", 4],
+        ["I", 1],
+      ];
+      let roman = "";
+      for (const [symbol, value] of romanNumerals) {
+        while (num >= value) {
+          roman += symbol;
+          num -= value;
+        }
+      }
+      return roman;
+
+    }
+    const sales_chart_optionss = {
+      series: [{
+        name: "Band Posisi",
+        data: [48, 287, 991, 822, 724, 594, 63],
+      }, ],
+      chart: {
+        type: "bar",
+        height: 300,
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "55%",
+          endingShape: "rounded",
+        },
+      },
+      legend: {
+        show: false,
+      },
+      colors: ["#0d6efd"],
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ["transparent"],
+      },
+      xaxis: {
+        categories: [1, 2, 3, 4, 5, 6, 7].map(toRoman),
+      },
+      fill: {
+        opacity: 1,
+      },
+      tooltip: {
+        y: {
+          formatter: function(val) {
+            return val + " Orang";
+          },
+        },
+      },
+    };
+
+    const sales_charts = new ApexCharts(
+      document.querySelector("#sales-charts"),
+      sales_chart_optionss
+    );
+    sales_charts.render();
+  </script>
+
+  <!-- logic data handler halaman summary -->
+  <script src="../js/datahandlersummary.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqwidgets/11.1.3/jqxcore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqwidgets/11.1.3/jqxdraw.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#knob-akhlak').jqxKnob({
+        value: 87.41, // Example value
+        min: 0,
+        max: 100,
+        width: 250,
+        height: 250,
+        startAngle: 120,
+        endAngle: 480,
+        rotation: 'clockwise',
+        marks: {
+          colorRemaining: '#333',
+          colorProgress: '#16a15d',
+          type: 'circle',
+          offset: '68%',
+          drawAboveProgressBar: true,
+          thickness: 1,
+          size: '2%',
+          majorSize: '2%',
+          majorInterval: 20,
+          minorInterval: 10
+        },
+        progressBar: {
+          background: {
+            fill: '#eeeeee'
+          },
+          style: {
+            fill: "#16a15d",
+            opacity: 0.4
+          },
+          ranges: [{
+              startValue: 0,
+              endValue: 50,
+              fill: "#f4a620"
             },
             {
-                name: "Electronics",
-                data: [65, 59, 80, 81, 56],
+              startValue: 50,
+              endValue: 75,
+              fill: "#ffff3b"
             },
-            ],
-            chart: {
-                height: 300,
-                type: "area",
-                toolbar: {
-                    show: false,
-                },
-            },
-            legend: {
-                show: false,
-            },
-            colors: ["#0d6efd", "#20c997"],
-            dataLabels: {
-                enabled: false,
-            },
-            stroke: {
-                curve: "smooth",
-            },
-            xaxis: {
-                type: "string",
-                categories: [
-                    "Baby Boomer",
-                    "Gen X",
-                    "Junior Millenial",
-                    "Senior Millenial",
-                    "Gen Z",
-                ],
-            },
-            tooltip: {
-                x: {
-                    format: "MMMM yyyy",
-                },
-            },
-        };
-
-        const sales_chart = new ApexCharts(
-            document.querySelector("#revenue-chart"),
-            sales_chart_options,
-        );
-        sales_chart.render();
-    </script> <!-- jsvectormap -->
-    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
-        integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
-        integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY=" crossorigin="anonymous"></script>
-    <!-- jsvectormap -->
-    <script>
-        const visitorsData = {
-            US: 398, // USA
-            SA: 400, // Saudi Arabia
-            CA: 1000, // Canada
-            DE: 500, // Germany
-            FR: 760, // France
-            CN: 300, // China
-            AU: 700, // Australia
-            BR: 600, // Brazil
-            IN: 800, // India
-            GB: 320, // Great Britain
-            RU: 3000, // Russia
-        };
-
-        // World map by jsVectorMap
-        const map = new jsVectorMap({
-            selector: "#world-map",
-            map: "world",
-        });
-
-        // Sparkline charts
-        const option_sparkline1 = {
-            series: [{
-                data: [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021],
-            },],
-            chart: {
-                type: "area",
-                height: 50,
-                sparkline: {
-                    enabled: true,
-                },
-            },
-            stroke: {
-                curve: "straight",
-            },
-            fill: {
-                opacity: 0.3,
-            },
-            yaxis: {
-                min: 0,
-            },
-            colors: ["#DCE6EC"],
-        };
-
-        const sparkline1 = new ApexCharts(
-            document.querySelector("#sparkline-1"),
-            option_sparkline1,
-        );
-        sparkline1.render();
-
-        const option_sparkline2 = {
-            series: [{
-                data: [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921],
-            },],
-            chart: {
-                type: "area",
-                height: 50,
-                sparkline: {
-                    enabled: true,
-                },
-            },
-            stroke: {
-                curve: "straight",
-            },
-            fill: {
-                opacity: 0.3,
-            },
-            yaxis: {
-                min: 0,
-            },
-            colors: ["#DCE6EC"],
-        };
-
-        const sparkline2 = new ApexCharts(
-            document.querySelector("#sparkline-2"),
-            option_sparkline2,
-        );
-        sparkline2.render();
-
-        const option_sparkline3 = {
-            series: [{
-                data: [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21],
-            },],
-            chart: {
-                type: "area",
-                height: 50,
-                sparkline: {
-                    enabled: true,
-                },
-            },
-            stroke: {
-                curve: "straight",
-            },
-            fill: {
-                opacity: 0.3,
-            },
-            yaxis: {
-                min: 0,
-            },
-            colors: ["#DCE6EC"],
-        };
-
-        const sparkline3 = new ApexCharts(
-            document.querySelector("#sparkline-3"),
-            option_sparkline3,
-        );
-        sparkline3.render();
-    </script>
-
-    <script>
-        //-------------
-        // - PIE CHART -
-        //-------------
-
-        const pie_chart_options = {
-            series: [700, 500],
-            chart: {
-                type: "donut",
-            },
-            labels: ["Pria", "Wanita"],
-            dataLabels: {
-                enabled: false,
-            },
-            colors: [
-                "#0d6efd",
-                "#d63384",
-            ],
-        };
-
-        const pie_chart = new ApexCharts(
-            document.querySelector("#pie-chart"),
-            pie_chart_options,
-        );
-        document.addEventListener("DOMContentLoaded", function () {
-            const pieCard = document.querySelector("#pie-chart");
-            if (pieCard) {
-                pieCard.style.height = "100px"; // Atur tinggi elemen
+            {
+              startValue: 75,
+              endValue: 100,
+              fill: "#12b24e"
             }
-        });
-
-        pie_chart.render();
-
-        //-----------------
-        // - END PIE CHART -
-        //-----------------
-
-        // SALES CHART
-        function toRoman(num) {
-            const romanNumerals = [
-                ["M", 1000],
-                ["CM", 900],
-                ["D", 500],
-                ["CD", 400],
-                ["C", 100],
-                ["XC", 90],
-                ["L", 50],
-                ["XL", 40],
-                ["X", 10],
-                ["IX", 9],
-                ["V", 5],
-                ["IV", 4],
-                ["I", 1],
-            ];
-            let roman = "";
-            for (const [symbol, value] of romanNumerals) {
-                while (num >= value) {
-                    roman += symbol;
-                    num -= value;
-                }
-            }
-            return roman;
-
+          ]
+        },
+        pointer: {
+          type: 'arrow',
+          style: {
+            fill: '#666'
+          },
+          size: '63%',
+          offset: '0%',
+          thickness: 7
         }
-        const sales_chart_optionss = {
-            series: [{
-                name: "Band Posisi",
-                data: [48, 287, 991, 822, 724, 594, 63],
-            },
-            ],
-            chart: {
-                type: "bar",
-                height: 300,
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: "55%",
-                    endingShape: "rounded",
-                },
-            },
-            legend: {
-                show: false,
-            },
-            colors: ["#0d6efd"],
-            dataLabels: {
-                enabled: false,
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ["transparent"],
-            },
-            xaxis: {
-                categories: [1, 2, 3, 4, 5, 6, 7].map(toRoman),
-            },
-            fill: {
-                opacity: 1,
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                        return val + " Orang";
-                    },
-                },
-            },
-        };
+      });
+    });
 
-        const sales_charts = new ApexCharts(
-            document.querySelector("#sales-charts"),
-            sales_chart_optionss
-        );
-        sales_charts.render();
-
-    </script>
-    <!-- logic dropdown option -->
-    <script src="../js/moredropdown.js"></script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Data awal untuk Implementasi AKHLAK
+      // Data awal untuk setiap card
+      const chartData = {
+        'pie-akhlak': {
+          labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
+          data: [87.41, 10, 2, 0.59],
+          backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
+          modalId: 'modal-akhlak',
+          tableBodyId: 'table-body-akhlak'
+        },
+        'pie-dci': {
+          labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
+          data: [85.0, 12, 2.5, 0.5],
+          backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
+          modalId: 'modal-dci',
+          tableBodyId: 'table-body-dci'
+        },
+        'pie-nps': {
+          labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
+          data: [80, 15, 3, 2],
+          backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
+          modalId: 'modal-nps',
+          tableBodyId: 'table-body-nps'
+        },
+        'pie-penerimaan': {
+          labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
+          data: [85.0, 12, 2.5, 0.5],
+          backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
+          modalId: 'modal-penerimaan',
+          tableBodyId: 'table-body-penerimaan'
+        },
+        'pie-readiness': {
+          labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
+          data: [80, 15, 3, 2],
+          backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
+          modalId: 'modal-readiness',
+          tableBodyId: 'table-body-readiness'
+        }
+      };
 
 
-    <script src="../js/datahandler.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqwidgets/11.1.3/jqxcore.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqwidgets/11.1.3/jqxdraw.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqwidgets/11.1.3/jqxknob.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-    <script>
-        $(document).ready(function () {
-            $('#knob-akhlak').jqxKnob({
-                value: 87.41, // Example value
-                min: 0,
-                max: 100,
-                width: 250,
-                height: 250,
-                startAngle: 120,
-                endAngle: 480,
-                rotation: 'clockwise',
-                marks: {
-                    colorRemaining: '#333',
-                    colorProgress: '#16a15d',
-                    type: 'circle',
-                    offset: '68%',
-                    drawAboveProgressBar: true,
-                    thickness: 1,
-                    size: '2%',
-                    majorSize: '2%',
-                    majorInterval: 20,
-                    minorInterval: 10
-                },
-                progressBar: {
-                    background: { fill: '#eeeeee' },
-                    style: { fill: "#16a15d", opacity: 0.4 },
-                    ranges: [
-                        { startValue: 0, endValue: 50, fill: "#f4a620" },
-                        { startValue: 50, endValue: 75, fill: "#ffff3b" },
-                        { startValue: 75, endValue: 100, fill: "#12b24e" }
-                    ]
-                },
-                pointer: {
-                    type: 'arrow',
-                    style: { fill: '#666' },
-                    size: '63%',
-                    offset: '0%',
-                    thickness: 7
+      // Inisialisasi semua grafik
+      const charts = {};
+      for (const [chartId, data] of Object.entries(chartData)) {
+        const ctx = document.getElementById(chartId).getContext('2d');
+        charts[chartId] = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: data.labels,
+            datasets: [{
+              data: data.data,
+              backgroundColor: data.backgroundColor
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                callbacks: {
+                  label: function(tooltipItem) {
+                    return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                  }
                 }
-            });
-        });
+              }
+            },
+            onClick: (event, elements) => {
+              if (elements.length > 0) {
+                const chartElement = elements[0];
+                const chart = charts[chartId];
+                const index = chartElement.index;
 
-        document.addEventListener("DOMContentLoaded", function () {
-            // Data awal untuk Implementasi AKHLAK
-            // Data awal untuk setiap card
-            const chartData = {
-                'pie-akhlak': {
-                    labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
-                    data: [87.41, 10, 2, 0.59],
-                    backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
-                    modalId: 'modal-akhlak',
-                    tableBodyId: 'table-body-akhlak'
-                },
-                'pie-dci': {
-                    labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
-                    data: [85.0, 12, 2.5, 0.5],
-                    backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
-                    modalId: 'modal-dci',
-                    tableBodyId: 'table-body-dci'
-                },
-                'pie-nps': {
-                    labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
-                    data: [80, 15, 3, 2],
-                    backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
-                    modalId: 'modal-nps',
-                    tableBodyId: 'table-body-nps'
-                },
-                'pie-penerimaan': {
-                    labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
-                    data: [85.0, 12, 2.5, 0.5],
-                    backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
-                    modalId: 'modal-penerimaan',
-                    tableBodyId: 'table-body-penerimaan'
-                },
-                'pie-readiness': {
-                    labels: ['Sehat', 'Cukup Sehat', 'Tidak Sehat', 'Sangat Tidak Sehat'],
-                    data: [80, 15, 3, 2],
-                    backgroundColor: ['#28a745', '#ffc107', '#FFA500', '#dc3545'],
-                    modalId: 'modal-readiness',
-                    tableBodyId: 'table-body-readiness'
-                }
-            };
+                // Buka modal dan tampilkan data
+                const modalId = chartData[chartId].modalId;
+                const tableBodyId = chartData[chartId].tableBodyId;
+                const tableBody = document.getElementById(tableBodyId);
 
+                // Kosongkan tabel sebelumnya
+                tableBody.innerHTML = '';
 
-            // Inisialisasi semua grafik
-            const charts = {};
-            for (const [chartId, data] of Object.entries(chartData)) {
-                const ctx = document.getElementById(chartId).getContext('2d');
-                charts[chartId] = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                        labels: data.labels,
-                        datasets: [{
-                            data: data.data,
-                            backgroundColor: data.backgroundColor
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    label: function (tooltipItem) {
-                                        return tooltipItem.label + ': ' + tooltipItem.raw + '%';
-                                    }
-                                }
-                            }
-                        },
-                        onClick: (event, elements) => {
-                            if (elements.length > 0) {
-                                const chartElement = elements[0];
-                                const chart = charts[chartId];
-                                const index = chartElement.index;
-
-                                // Buka modal dan tampilkan data
-                                const modalId = chartData[chartId].modalId;
-                                const tableBodyId = chartData[chartId].tableBodyId;
-                                const tableBody = document.getElementById(tableBodyId);
-
-                                // Kosongkan tabel sebelumnya
-                                tableBody.innerHTML = '';
-
-                                // Tambahkan data ke tabel
-                                chart.data.labels.forEach((label, idx) => {
-                                    const row = `<tr>
+                // Tambahkan data ke tabel
+                chart.data.labels.forEach((label, idx) => {
+                  const row = `<tr>
                                 <td>${label}</td>
                                 <td>${chart.data.datasets[0].data[idx]}%</td>
                             </tr>`;
-                                    tableBody.innerHTML += row;
-                                });
-
-                                // Tampilkan modal
-                                const modal = new bootstrap.Modal(document.getElementById(modalId));
-                                modal.show();
-                            }
-                        }
-                    }
+                  tableBody.innerHTML += row;
                 });
-            };
-            // Event Listener untuk Filter
-            const rows = document.querySelectorAll('.filter-category');
-            rows.forEach(row => {
-                row.addEventListener('click', function () {
-                    const selectedLabel = this.dataset.label;
-                    const targetChartId = this.dataset.target;
-                    const chart = charts[targetChartId];
-                    const data = chartData[targetChartId];
 
-                    // Cari indeks kategori yang dipilih
-                    const selectedIndex = data.labels.findIndex(label => label === selectedLabel);
-
-                    // Perbarui grafik hanya dengan data kategori yang dipilih
-                    chart.data = {
-                        labels: [data.labels[selectedIndex]],
-                        datasets: [{
-                            data: [data.data[selectedIndex]],
-                            backgroundColor: [data.backgroundColor[selectedIndex]]
-                        }]
-                    };
-                    chart.update();
-                });
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Data untuk Pie Chart
-            const pieChartData = {
-                amanah: {
-                    labels: ['Sehat', 'Tidak Sehat'],
-                    data: [86.40, 13.60]
-                },
-                kompeten: {
-                    labels: ['Sehat', 'Tidak Sehat'],
-                    data: [86.51, 13.49]
-                },
-                harmonis: {
-                    labels: ['Sehat', 'Tidak Sehat'],
-                    data: [87.50, 12.50]
-                },
-                loyal: {
-                    labels: ['Sehat', 'Tidak Sehat'],
-                    data: [87.52, 12.48]
-                },
-                adaptif: {
-                    labels: ['Sehat', 'Tidak Sehat'],
-                    data: [85.83, 14.17]
-                },
-                kolaboratif: {
-                    labels: ['Sehat', 'Tidak Sehat'],
-                    data: [86.23, 13.77]
-                }
-            };
-
-            const chartConfig = (data, chartId, modalId, tableBodyId) => ({
-                type: 'pie',
-                data: {
-                    labels: data.labels,
-                    datasets: [{
-                        data: data.data,
-                        backgroundColor: ['#28a745', '#dc3545']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    onClick: function (event, elements) {
-                        if (elements.length > 0) {
-                            const index = elements[0].index;
-                            const label = this.data.labels[index];
-                            const percentage = this.data.datasets[0].data[index];
-
-                            // Show modal with data
-                            const modal = new bootstrap.Modal(document.getElementById(modalId));
-
-                            // Populate table inside modal
-                            const tableBody = document.querySelector(tableBodyId);
-                            tableBody.innerHTML = `<tr><td>${label}</td><td>${percentage}%</td></tr>`;
-
-                            // Show the modal
-                            modal.show();
-                        }
-                    }
-                }
-            });
-
-            // Initialize all charts
-            new Chart(document.getElementById('akhlak-amanah-chart'), chartConfig(pieChartData.amanah, 'akhlak-amanah-chart', 'modal-amanah', '#table-body-amanah'));
-            new Chart(document.getElementById('akhlak-kompeten-chart'), chartConfig(pieChartData.kompeten, 'akhlak-kompeten-chart', 'modal-kompeten', '#table-body-kompeten'));
-            new Chart(document.getElementById('akhlak-harmonis-chart'), chartConfig(pieChartData.harmonis, 'akhlak-harmonis-chart', 'modal-harmonis', '#table-body-harmonis'));
-            new Chart(document.getElementById('akhlak-loyal-chart'), chartConfig(pieChartData.loyal, 'akhlak-loyal-chart', 'modal-loyal', '#table-body-loyal'));
-            new Chart(document.getElementById('akhlak-adaptif-chart'), chartConfig(pieChartData.adaptif, 'akhlak-adaptif-chart', 'modal-adaptif', '#table-body-adaptif'));
-            new Chart(document.getElementById('akhlak-kolaboratif-chart'), chartConfig(pieChartData.kolaboratif, 'akhlak-kolaboratif-chart', 'modal-kolaboratif', '#table-body-kolaboratif'));
-        });
-
-        //chart card intervensi pimpinan dll
-        // Data untuk pie charts
-        const leaderData = [30, 50, 20]; // Contoh data
-        const systemData = [40, 35, 25]; // Contoh data
-        const symbolData = [25, 25, 50]; // Contoh data
-
-        const backgroundColors = ['#28a745', '#ffc107', '#dc3545'];
-
-        // Intervensi Pimpinan Chart
-        const leaderCtx = document.getElementById('intervention-leader-chart').getContext('2d');
-        new Chart(leaderCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
-                datasets: [{
-                    data: leaderData,
-                    backgroundColor: backgroundColors
-                }]
+                // Tampilkan modal
+                const modal = new bootstrap.Modal(document.getElementById(modalId));
+                modal.show();
+              }
             }
+          }
         });
+      };
+      // Event Listener untuk Filter
+      const rows = document.querySelectorAll('.filter-category');
+      rows.forEach(row => {
+        row.addEventListener('click', function() {
+          const selectedLabel = this.dataset.label;
+          const targetChartId = this.dataset.target;
+          const chart = charts[targetChartId];
+          const data = chartData[targetChartId];
 
-        // Intervensi Sistem Chart
-        const systemCtx = document.getElementById('intervention-system-chart').getContext('2d');
-        new Chart(systemCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
-                datasets: [{
-                    data: systemData,
-                    backgroundColor: backgroundColors
-                }]
-            }
-        });
+          // Cari indeks kategori yang dipilih
+          const selectedIndex = data.labels.findIndex(label => label === selectedLabel);
 
-        // Intervensi Simbol Chart
-        const symbolCtx = document.getElementById('intervention-symbol-chart').getContext('2d');
-        new Chart(symbolCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
-                datasets: [{
-                    data: symbolData,
-                    backgroundColor: backgroundColors
-                }]
-            }
+          // Perbarui grafik hanya dengan data kategori yang dipilih
+          chart.data = {
+            labels: [data.labels[selectedIndex]],
+            datasets: [{
+              data: [data.data[selectedIndex]],
+              backgroundColor: [data.backgroundColor[selectedIndex]]
+            }]
+          };
+          chart.update();
         });
-    </script>
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Data untuk Pie Chart
+      const pieChartData = {
+        amanah: {
+          labels: ['Sehat', 'Tidak Sehat'],
+          data: [86.40, 13.60]
+        },
+        kompeten: {
+          labels: ['Sehat', 'Tidak Sehat'],
+          data: [86.51, 13.49]
+        },
+        harmonis: {
+          labels: ['Sehat', 'Tidak Sehat'],
+          data: [87.50, 12.50]
+        },
+        loyal: {
+          labels: ['Sehat', 'Tidak Sehat'],
+          data: [87.52, 12.48]
+        },
+        adaptif: {
+          labels: ['Sehat', 'Tidak Sehat'],
+          data: [85.83, 14.17]
+        },
+        kolaboratif: {
+          labels: ['Sehat', 'Tidak Sehat'],
+          data: [86.23, 13.77]
+        }
+      };
+
+      const chartConfig = (data, chartId, modalId, tableBodyId) => ({
+        type: 'pie',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            data: data.data,
+            backgroundColor: ['#28a745', '#dc3545']
+          }]
+        },
+        options: {
+          responsive: true,
+          onClick: function(event, elements) {
+            if (elements.length > 0) {
+              const index = elements[0].index;
+              const label = this.data.labels[index];
+              const percentage = this.data.datasets[0].data[index];
+
+              // Show modal with data
+              const modal = new bootstrap.Modal(document.getElementById(modalId));
+
+              // Populate table inside modal
+              const tableBody = document.querySelector(tableBodyId);
+              tableBody.innerHTML = `<tr><td>${label}</td><td>${percentage}%</td></tr>`;
+
+              // Show the modal
+              modal.show();
+            }
+          }
+        }
+      });
+
+      // Initialize all charts
+      new Chart(document.getElementById('akhlak-amanah-chart'), chartConfig(pieChartData.amanah, 'akhlak-amanah-chart', 'modal-amanah', '#table-body-amanah'));
+      new Chart(document.getElementById('akhlak-kompeten-chart'), chartConfig(pieChartData.kompeten, 'akhlak-kompeten-chart', 'modal-kompeten', '#table-body-kompeten'));
+      new Chart(document.getElementById('akhlak-harmonis-chart'), chartConfig(pieChartData.harmonis, 'akhlak-harmonis-chart', 'modal-harmonis', '#table-body-harmonis'));
+      new Chart(document.getElementById('akhlak-loyal-chart'), chartConfig(pieChartData.loyal, 'akhlak-loyal-chart', 'modal-loyal', '#table-body-loyal'));
+      new Chart(document.getElementById('akhlak-adaptif-chart'), chartConfig(pieChartData.adaptif, 'akhlak-adaptif-chart', 'modal-adaptif', '#table-body-adaptif'));
+      new Chart(document.getElementById('akhlak-kolaboratif-chart'), chartConfig(pieChartData.kolaboratif, 'akhlak-kolaboratif-chart', 'modal-kolaboratif', '#table-body-kolaboratif'));
+    });
+
+    //chart card intervensi pimpinan dll
+    // Data untuk pie charts
+    const leaderData = [30, 50, 20]; // Contoh data
+    const systemData = [40, 35, 25]; // Contoh data
+    const symbolData = [25, 25, 50]; // Contoh data
+
+    const backgroundColors = ['#28a745', '#ffc107', '#dc3545'];
+
+    // Intervensi Pimpinan Chart
+    const leaderCtx = document.getElementById('intervention-leader-chart').getContext('2d');
+    new Chart(leaderCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
+        datasets: [{
+          data: leaderData,
+          backgroundColor: backgroundColors
+        }]
+      }
+    });
+
+    // Intervensi Sistem Chart
+    const systemCtx = document.getElementById('intervention-system-chart').getContext('2d');
+    new Chart(systemCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
+        datasets: [{
+          data: systemData,
+          backgroundColor: backgroundColors
+        }]
+      }
+    });
+
+    // Intervensi Simbol Chart
+    const symbolCtx = document.getElementById('intervention-symbol-chart').getContext('2d');
+    new Chart(symbolCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Melebihi standar', 'Memenuhi standar', 'Kurang memenuhi standar'],
+        datasets: [{
+          data: symbolData,
+          backgroundColor: backgroundColors
+        }]
+      }
+    });
+  </script>
 </body>
 
 </html>
