@@ -22,15 +22,15 @@ document.getElementById("kategoridropdown").addEventListener("change", async fun
   if (selectedValue === "1") {
     // Telkom Parent
     tempDataKarakteristik = await getSheetData(summarySpreadsheetId, 'RESPONDEN', 'B5:B21');
-    tempDataPengurutanIndex = await getSheetData(summarySpreadsheetId, 'SUMMARY1', 'D2:L2');
+    tempDataPengurutanIndex = await getSheetData(summarySpreadsheetId, 'SUMMARY1', 'E2:L2');
   } else if (selectedValue === "2") {
     // Telkom Group AP
     tempDataKarakteristik = await getSheetData(summarySpreadsheetId, 'RESPONDEN', 'E5:E22');
-    tempDataPengurutanIndex = await getSheetData(summarySpreadsheetId, 'SUMMARY1', 'D3:L3');
+    tempDataPengurutanIndex = await getSheetData(summarySpreadsheetId, 'SUMMARY1', 'E3:L3');
   } else if (selectedValue === "3") {
     // Telkom Group - TSEL
     tempDataKarakteristik = await getSheetData(summarySpreadsheetId, 'RESPONDEN', 'I5:I22');
-    tempDataPengurutanIndex = await getSheetData(summarySpreadsheetId, 'SUMMARY1', 'D4:L4');
+    tempDataPengurutanIndex = await getSheetData(summarySpreadsheetId, 'SUMMARY1', 'E4:L4');
   }
 
   console.log("Data Karakteristik:", tempDataKarakteristik);
@@ -38,21 +38,37 @@ document.getElementById("kategoridropdown").addEventListener("change", async fun
 
   // UPDATE PENGURUTAN INDEX
   if (tempDataPengurutanIndex.length >= 8) {
-    const actualValue1 = (tempDataPengurutanIndex[1] * 100).toFixed(2);
+
+    // Setup data for Implementasi Akhlak Chart
+    const actualValue1 = (tempDataPengurutanIndex[0] * 100).toFixed(2);
     updateChartJSData(implementasi_akhlak_chart, [actualValue1, (100 - actualValue1).toFixed(2)]);
-    const actualValue2 = (tempDataPengurutanIndex[2] * 100).toFixed(2);
+
+    // Setup data for Digital Culture Chart
+    const actualValue2 = (tempDataPengurutanIndex[1] * 100).toFixed(2);
     updateChartJSData(digital_culture_chart, [actualValue2, (100 - actualValue2).toFixed(2)]);
-    const actualValue3 = (tempDataPengurutanIndex[3] * 100).toFixed(2);
+
+    // Setup data for NPS Chart
+    const actualValue3 = (tempDataPengurutanIndex[2] * 100).toFixed(2);
     updateChartJSData(nps_chart, [actualValue3, (100 - actualValue3).toFixed(2)]);
-    updateChartJSData(penerimaan_chart, [tempDataPengurutanIndex[4], tempDataPengurutanIndex[0]]);
-    const actualValue4 = (tempDataPengurutanIndex[5] * 100).toFixed(2);
+
+    // Setup data for Penerimaan Chart
+    updateChartJSData(penerimaan_chart, [tempDataPengurutanIndex[7].toFixed(0), 300]);
+
+    // Setup data for Readiness Chart
+    const actualValue4 = (tempDataPengurutanIndex[3] * 100).toFixed(2);
     updateChartJSData(readiness_chart, [actualValue4, (100 - actualValue4).toFixed(2)]);
-    const actualValue5 = (tempDataPengurutanIndex[6] * 10).toFixed(2);
-    updateChartJSData(intervensi_pimpinan_chart, [actualValue5, (4 - actualValue5).toFixed(2)]);
-    const actualValue6 = (tempDataPengurutanIndex[7] * 10).toFixed(2);
-    updateChartJSData(intervensi_sistem_chart, [actualValue6, (4 - actualValue6).toFixed(2)]);
-    const actualValue7 = (tempDataPengurutanIndex[8] * 10).toFixed(2);
-    updateChartJSData(intervensi_simbol_chart, [actualValue7, (4 - actualValue7).toFixed(2)]);
+
+    // Setup data for Intervensi Pimpinan Charts
+    const actualValue5 = (tempDataPengurutanIndex[4]).toFixed(2);
+    updateChartJSData(intervensi_pimpinan_chart, [actualValue5, (3 - actualValue5).toFixed(2)]);
+
+    // Setup data for Intervensi Sistem Charts
+    const actualValue6 = (tempDataPengurutanIndex[5]).toFixed(2);
+    updateChartJSData(intervensi_sistem_chart, [actualValue6, (3 - actualValue6).toFixed(2)]);
+
+    // Setup data for Intervensi Simbol Charts
+    const actualValue7 = (tempDataPengurutanIndex[6]).toFixed(2);
+    updateChartJSData(intervensi_simbol_chart, [actualValue7, (3 - actualValue7).toFixed(2)]);
   } else {
     console.error("Possible invalid data received:", tempDataPengurutanIndex);
   }
@@ -92,6 +108,11 @@ function generateStartingChartJS() {
       }]
     },
     options: {
+      interaction: {
+        mode: 'nearest',
+        axis: 'x',
+        intersect: false
+      },
       responsive: true,
       plugins: {
         legend: {
@@ -197,7 +218,7 @@ function generateStartingChartJS() {
         tooltip: {
           callbacks: {
             label: function (tooltipItem) {
-              return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+              return tooltipItem.label + ': ' + tooltipItem.raw;
             }
           }
         }
@@ -230,7 +251,7 @@ function generateStartingChartJS() {
         tooltip: {
           callbacks: {
             label: function (tooltipItem) {
-              return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+              return tooltipItem.label + ': ' + tooltipItem.raw;
             }
           }
         }
@@ -264,7 +285,7 @@ function generateStartingChartJS() {
         tooltip: {
           callbacks: {
             label: function (tooltipItem) {
-              return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+              return tooltipItem.label + ': ' + tooltipItem.raw;
             }
           }
         }
@@ -298,7 +319,7 @@ function generateStartingChartJS() {
         tooltip: {
           callbacks: {
             label: function (tooltipItem) {
-              return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+              return tooltipItem.label + ': ' + tooltipItem.raw;
             }
           }
         }
@@ -407,6 +428,7 @@ function generateStartingChartApex() {
       enabled: false,
     },
     colors: ["#0d6efd", "#d63384"],
+    labels: ["Pria", "Wanita"],
   };
 
   gender_chart = new ApexCharts(
