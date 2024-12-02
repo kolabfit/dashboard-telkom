@@ -108,11 +108,6 @@ function generateStartingChartJS() {
       }]
     },
     options: {
-      interaction: {
-        mode: 'nearest',
-        axis: 'x',
-        intersect: false
-      },
       responsive: true,
       plugins: {
         legend: {
