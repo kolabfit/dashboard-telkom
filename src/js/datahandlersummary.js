@@ -110,14 +110,16 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000']
+        backgroundColor: ['#28a745', '#7e91cc']
       }]
     },
     options: {
       responsive: true,
       plugins: {
-        chartdatalabels: {
-          display: true
+        datalabels: {
+          formatter: function(value, context) {
+            return value + '%';
+          }
         },
         legend: {
           display: false
@@ -145,12 +147,17 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000']
+        backgroundColor: ['#28a745', '#7e91cc']
       }]
     },
     options: {
       responsive: true,
       plugins: {
+        datalabels: {
+          formatter: function(value, context) {
+            return value + '%';
+          }
+        },
         legend: {
           display: false
         },
@@ -177,12 +184,17 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000']
+        backgroundColor: ['#28a745', '#7e91cc']
       }]
     },
     options: {
       responsive: true,
       plugins: {
+        datalabels: {
+          formatter: function(value, context) {
+            return value + '%';
+          }
+        },
         legend: {
           display: false
         },
@@ -210,7 +222,7 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000']
+        backgroundColor: ['#28a745', '#7e91cc']
       }]
     },
     options: {
@@ -243,12 +255,17 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000']
+        backgroundColor: ['#28a745', '#7e91cc']
       }]
     },
     options: {
       responsive: true,
       plugins: {
+        datalabels: {
+          formatter: function(value, context) {
+            return value + '%';
+          }
+        },
         legend: {
           display: false
         },
@@ -277,7 +294,7 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000'],
+        backgroundColor: ['#28a745', '#7e91cc'],
       }]
     },
     options: {
@@ -311,7 +328,7 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000'],
+        backgroundColor: ['#28a745', '#7e91cc'],
       }]
     },
     options: {
@@ -345,7 +362,7 @@ function generateStartingChartJS() {
       labels: ['Terpilih', 'Tidak Terpilih'],
       datasets: [{
         data: [0, 0],
-        backgroundColor: ['#28a745', '#ff0000'],
+        backgroundColor: ['#28a745', '#7e91cc'],
       }]
     },
     options: {
