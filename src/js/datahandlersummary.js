@@ -132,12 +132,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-akhlak'));
-          modal.show();
-        }
-      }
     }
   });
 
@@ -169,12 +163,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-dci'));
-          modal.show();
-        }
-      }
     }
   });
 
@@ -206,12 +194,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-nps'));
-          modal.show();
-        }
-      }
     }
   });
 
@@ -239,12 +221,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-penerimaan'));
-          modal.show();
-        }
-      }
     }
   });
 
@@ -277,12 +253,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-readiness'));
-          modal.show();
-        }
-      }
     }
   });
 
@@ -311,12 +281,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-intervention-leader'));
-          modal.show();
-        }
-      }
     }
   });
 
@@ -345,12 +309,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-intervention-system'));
-          modal.show();
-        }
-      }
     }
   });
 
@@ -379,12 +337,6 @@ function generateStartingChartJS() {
           }
         }
       },
-      onClick: (event, elements) => {
-        if (elements.length > 0) {
-          const modal = new bootstrap.Modal(document.getElementById('modal-intervention-symbol'));
-          modal.show();
-        }
-      }
     }
   });
 }
