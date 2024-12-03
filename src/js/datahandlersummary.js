@@ -1,3 +1,9 @@
+// Show labels on top of the chartjs
+Chart.register(ChartDataLabels);
+Chart.defaults.set('plugins.datalabels', {
+  color: '#ffffff',
+});
+
 // pengurutan index chart
 var implementasi_akhlak_chart;
 var digital_culture_chart;
@@ -110,6 +116,9 @@ function generateStartingChartJS() {
     options: {
       responsive: true,
       plugins: {
+        chartdatalabels: {
+          display: true
+        },
         legend: {
           display: false
         },
@@ -246,7 +255,7 @@ function generateStartingChartJS() {
         tooltip: {
           callbacks: {
             label: function (tooltipItem) {
-              return tooltipItem.label + ': ' + tooltipItem.raw;
+              return tooltipItem.label + ': ' + tooltipItem.raw + '%';
             }
           }
         }
@@ -348,7 +357,7 @@ function generateStartingChartJS() {
         tooltip: {
           callbacks: {
             label: function (tooltipItem) {
-              return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+              return tooltipItem.label + ': ' + tooltipItem.raw;
             }
           }
         }
